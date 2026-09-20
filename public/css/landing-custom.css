@@ -1218,12 +1218,7 @@ html {
     color: var(--dmk-ash);
     line-height: 1.55 !important;
     margin-bottom: 0 !important;
-    height: 3.1em !important;
-    min-height: 3.1em !important;
-    max-height: 3.1em !important;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 2 !important;
-    -webkit-box-orient: vertical !important;
+    flex: 1 !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
 }
@@ -2430,78 +2425,116 @@ html {
     }
 
     /* ====================================================
-       10. CAROUSELS (Mobile: 2 Cards Side-by-Side, Arrows Hidden)
+       10. CAROUSELS (Mobile: 3 Cards, Arrows at Bottom)
        ==================================================== */
     .dmk-carousel-wrapper {
         position: relative;
-        padding: 0 0px;
+        padding: 0 !important;
+        padding-bottom: 40px !important;
     }
 
-    /* Hide side arrows on mobile — save space, users swipe */
+    /* Move slider arrows to bottom-center on mobile */
+    .dmk-slider-btn,
     .dmk-slider-btn-prev,
     .dmk-slider-btn-next {
+        position: absolute !important;
+        top: auto !important;
+        bottom: -2px !important;
+        transform: none !important;
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 11px !important;
+        z-index: 25 !important;
+        background: rgba(10, 22, 40, 0.85) !important;
+        border: 1px solid var(--dmk-brass) !important;
+        color: #FFFFFF !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    .dmk-slider-btn-prev {
+        left: calc(50% - 38px) !important;
+        right: auto !important;
+    }
+    .dmk-slider-btn-next {
+        right: calc(50% - 38px) !important;
+        left: auto !important;
+    }
+
+    /* Hero arrows: still hidden on mobile (hero uses swipe & indicators) */
+    .dmk-hero-section .carousel-control-prev,
+    .dmk-hero-section .carousel-control-next {
         display: none !important;
     }
 
-    /* Cards di Mobile: 2 Kolom, Compact & Proportional */
+    /* Override style.css margin that prevents cards from fitting */
+    .promo-carousel .owl-item .data-card-item,
+    .portfolio-carousel .owl-item .data-card-item,
+    .dome-carousel .owl-item .data-card-item {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Cards di Mobile: 3 Kolom, Compact & Proportional */
     .dmk-promo-card {
-        border-radius: var(--dmk-radius-md) !important;
+        border-radius: 8px !important;
         overflow: hidden !important;
-        height: 220px !important;
-        min-height: 220px !important;
-        max-height: 220px !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
         display: flex !important;
         flex-direction: column !important;
         width: 100% !important;
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
     }
     .promo-carousel .dmk-promo-img-wrap,
     .portfolio-carousel .dmk-promo-img-wrap {
-        height: 130px !important;
-        min-height: 130px !important;
-        max-height: 130px !important;
-        border-top-left-radius: var(--dmk-radius-md) !important;
-        border-top-right-radius: var(--dmk-radius-md) !important;
+        height: 90px !important;
+        min-height: 90px !important;
+        max-height: 90px !important;
+        border-top-left-radius: 8px !important;
+        border-top-right-radius: 8px !important;
         padding: 0 !important;
         flex-shrink: 0 !important;
         width: 100% !important;
     }
     .dome-carousel .dmk-promo-img-wrap {
-        height: 130px !important;
-        min-height: 130px !important;
-        max-height: 130px !important;
-        border-top-left-radius: var(--dmk-radius-md) !important;
-        border-top-right-radius: var(--dmk-radius-md) !important;
-        padding: 8px !important;
+        height: 90px !important;
+        min-height: 90px !important;
+        max-height: 90px !important;
+        border-top-left-radius: 8px !important;
+        border-top-right-radius: 8px !important;
+        padding: 6px !important;
         flex-shrink: 0 !important;
         width: 100% !important;
     }
     .dmk-promo-overlay-inner {
-        width: 30px !important;
-        height: 30px !important;
-        font-size: 0.75rem !important;
+        width: 24px !important;
+        height: 24px !important;
+        font-size: 0.6rem !important;
     }
     .dmk-promo-body {
         height: auto !important;
-        min-height: 85px !important;
-        max-height: 90px !important;
-        padding: 8px 8px !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        padding: 6px 6px 8px !important;
         flex: 1 !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: flex-start !important;
         box-sizing: border-box !important;
-        overflow: hidden !important;
+        overflow: visible !important;
     }
     .dmk-promo-title {
         font-family: var(--dmk-font-heading);
-        font-size: 0.76rem !important;
+        font-size: 0.6rem !important;
         font-weight: 700 !important;
-        line-height: 1.25 !important;
+        line-height: 1.2 !important;
         height: auto !important;
-        min-height: 2em !important;
-        max-height: 2.5em !important;
-        margin-bottom: 4px !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        margin-bottom: 3px !important;
         display: -webkit-box !important;
         -webkit-line-clamp: 2 !important;
         -webkit-box-orient: vertical !important;
@@ -2509,17 +2542,18 @@ html {
         text-overflow: ellipsis !important;
     }
     .dmk-promo-desc {
-        display: -webkit-box !important;
-        -webkit-line-clamp: 2 !important;
-        -webkit-box-orient: vertical !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-        font-size: 0.65rem !important;
-        line-height: 1.4 !important;
+        font-size: 0.52rem !important;
+        line-height: 1.35 !important;
+        height: auto !important;
         min-height: 0 !important;
-        max-height: 2.8em !important;
+        max-height: none !important;
         color: var(--dmk-ash) !important;
         margin-bottom: 0 !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 3 !important;
+        -webkit-box-orient: vertical !important;
     }
     .dmk-promo-card:hover { transform: none !important; }
 

@@ -116,8 +116,8 @@
         autoplayHoverPause: false,
         responsive: {
             0: {
-                items: 2,
-                margin: 10,
+                items: 3,
+                margin: 6,
                 center: false,
                 stagePadding: 0,
             },
@@ -147,8 +147,8 @@
         autoplayHoverPause: false,
         responsive: {
             0: {
-                items: 2,
-                margin: 10,
+                items: 3,
+                margin: 6,
                 center: false,
                 stagePadding: 0,
             },
@@ -177,9 +177,9 @@
         autoplayHoverPause: false,
         responsive: {
             0: {
-                items: 2,
+                items: 3,
                 center: false,
-                margin: 10,
+                margin: 6,
                 stagePadding: 0,
             },
             576: {

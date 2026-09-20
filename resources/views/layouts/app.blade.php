@@ -34,6 +34,9 @@
 
     <!-- Cropper.js Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js"></script>
+
+    <!-- Top-Level Global Image Cropper Modal -->
+    <x-image-cropper-modal />
 </body>
 
 </html>

@@ -161,12 +161,18 @@
             activeInput = inputEl;
             originalFile = file;
 
+            // Pastikan modal selalu berada di elemen teratas <body> agar tidak tertutup stacking context apapun
+            if (modal.parentElement !== document.body) {
+                document.body.appendChild(modal);
+            }
+
             // Buat Object URL instan (0 milidetik, tanpa tunggu FileReader baca seluruh file)
             const objectUrl = URL.createObjectURL(file);
             cropperImg.src = objectUrl;
 
             // Buka modal langsung di tengah layar dengan z-index tertinggi
             modal.style.display = 'flex';
+            modal.style.zIndex = '2147483647'; // Nilai z-index maksimal browser
             document.body.style.overflow = 'hidden';
 
             // Inisialisasi cropper begitu gambar siap

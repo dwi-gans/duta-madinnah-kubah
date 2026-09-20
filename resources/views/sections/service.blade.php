@@ -29,7 +29,7 @@
                 tag="PORSELEN ENAMEL"
                 badge="Garansi 20 Tahun"
                 image="enamel.png"
-                description="Pelapisan porselen oven 800°C standar Maspion. Warna cerah abadi, anti gores, dan bebas perawatan jangka panjang."
+                description="Pelapisan porselen oven 850°C. Warna cerah abadi, anti gores, dan bebas perawatan jangka panjang."
                 wow-delay="0.1s"
                 data-bs-toggle="modal"
                 data-bs-target="#modal-enamel" />

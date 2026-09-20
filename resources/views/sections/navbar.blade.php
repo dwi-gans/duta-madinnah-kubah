@@ -31,13 +31,14 @@
             <!-- Nav Links -->
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto align-items-xl-center py-3 py-xl-0 gap-0 gap-xl-1">
-                    <a href="#home"        class="nav-link dmk-nav-link active">Beranda</a>
-                    <a href="#promotion"   class="nav-link dmk-nav-link">Promosi</a>
-                    <a href="#about"       class="nav-link dmk-nav-link">Tentang</a>
-                    <a href="#service"     class="nav-link dmk-nav-link">Material</a>
-                    <a href="#dome-design" class="nav-link dmk-nav-link">Model Kubah</a>
-                    <a href="#feature"     class="nav-link dmk-nav-link">Keunggulan</a>
-                    <a href="#portfolio"   class="nav-link dmk-nav-link">Portofolio</a>
+                    <a href="#home"           class="nav-link dmk-nav-link active">Beranda</a>
+                    <a href="#promotion"      class="nav-link dmk-nav-link">Promosi</a>
+                    <a href="#about"          class="nav-link dmk-nav-link">Tentang</a>
+                    <a href="#feature"        class="nav-link dmk-nav-link">Keunggulan</a>
+                    <a href="#service"        class="nav-link dmk-nav-link">Material</a>
+                    <a href="#dome-design"    class="nav-link dmk-nav-link">Model Kubah</a>
+                    <a href="#ceiling-design" class="nav-link dmk-nav-link">Plafon</a>
+                    <a href="#portfolio"      class="nav-link dmk-nav-link">Portofolio</a>
                 </div>
 
                 <div class="d-flex align-items-center gap-2 ms-xl-4 mt-3 mt-xl-0">

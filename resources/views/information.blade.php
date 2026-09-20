@@ -9,16 +9,54 @@
                     Kelola banner penawaran harga dan artikel pengumuman yang tampil di beranda.
                 </p>
             </div>
-            <x-primary-button x-data x-on:click.prevent="$dispatch('open-modal', 'add-data')">
+            <x-primary-button class="w-full sm:w-auto justify-center shrink-0 mt-2 sm:mt-0" x-data x-on:click.prevent="$dispatch('open-modal', 'add-data')">
                 <i class="fa-solid fa-plus me-2"></i> Tambah Informasi
             </x-primary-button>
         </div>
     </x-slot>
 
-    <div class="py-8">
+    <div class="py-5 sm:py-8 px-3 sm:px-0">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-[#0A1628] border border-[#1E3A64] rounded-2xl p-6 shadow-xl flex flex-col gap-4">
-                <div class="relative overflow-x-auto border border-[#1E3A64] rounded-xl overflow-hidden">
+            <div class="bg-[#0A1628] border border-[#1E3A64] rounded-xl sm:rounded-2xl p-3.5 sm:p-6 shadow-xl flex flex-col gap-4">
+
+                <!-- Mobile Bento Grid (2-Kolom) -->
+                <div class="grid grid-cols-2 gap-2.5 sm:gap-3 md:hidden">
+                    @forelse ($information as $info)
+                        <div class="bg-[#0F2038] border border-[#1E3A64] hover:border-[#26826B] rounded-xl p-2.5 flex flex-col justify-between transition-all duration-200 shadow-md">
+                            <div>
+                                <div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden border border-[#1E3A64] mb-2 bg-[#050B14]">
+                                    <img src='{{ asset("storage/$info->image_path") }}'
+                                         class="w-full h-full object-cover" alt="{{ $info->title }}">
+                                </div>
+                                <h4 class="font-bold text-white text-xs line-clamp-2 leading-snug mb-1 font-['Barlow_Condensed'] tracking-wide">
+                                    {{ $info->title }}
+                                </h4>
+                                <p class="text-[#8DA8CA] text-[11px] line-clamp-2 leading-relaxed mb-2.5">
+                                    {{ $info->description ?: '-' }}
+                                </p>
+                            </div>
+                            <div class="pt-2 border-t border-[#1E3A64]/80 flex items-center justify-between gap-1.5">
+                                <button class="flex-1 py-1.5 px-2 bg-[#0A1628] hover:bg-[#8CE0C0]/10 border border-[#1E3A64] hover:border-[#8CE0C0] rounded-lg text-[#8CE0C0] font-bold text-[11px] uppercase tracking-wider font-['Barlow_Condensed'] flex items-center justify-center gap-1 transition"
+                                        x-data x-on:click.prevent="$dispatch('open-modal', 'edit-data-{{ $info->id }}')">
+                                    <i class="fa-solid fa-pen-to-square text-[10px]"></i> Sunting
+                                </button>
+                                <button class="py-1.5 px-2.5 bg-[#0A1628] hover:bg-red-950/40 border border-[#1E3A64] hover:border-red-500/50 rounded-lg text-red-400 font-bold text-[11px] uppercase tracking-wider font-['Barlow_Condensed'] flex items-center justify-center transition"
+                                        x-data x-on:click.prevent="$dispatch('open-modal', 'delete-data-{{ $info->id }}')"
+                                        title="Hapus">
+                                    <i class="fa-solid fa-trash text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    @empty
+                        <div class="col-span-2 py-8 text-center text-sm text-[#8DA8CA]">
+                            <i class="fa-solid fa-newspaper text-3xl mb-2 text-[#1E3A64] block"></i>
+                            Belum ada data informasi & promo.
+                        </div>
+                    @endforelse
+                </div>
+
+                <!-- Desktop Table View -->
+                <div class="hidden md:block relative overflow-x-auto border border-[#1E3A64] rounded-xl overflow-hidden">
                     <table class="w-full text-sm text-left text-gray-300">
                         <thead class="text-xs text-[#D9B35A] uppercase bg-[#0F2038] font-['Barlow_Condensed'] font-bold tracking-wider border-b border-[#1E3A64]">
                             <tr>

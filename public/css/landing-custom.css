@@ -1670,6 +1670,150 @@ html {
 }
 
 
+/* ====================================================
+   CEILING / PLAFON KUBAH SECTION (Desktop)
+   ==================================================== */
+.dmk-ceiling-section {
+    background-color: var(--dmk-charcoal);
+    position: relative;
+    padding: 80px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dmk-plafon-card {
+    background: var(--dmk-slate);
+    border: 1px solid var(--dmk-steel);
+    border-radius: var(--dmk-radius-md);
+    padding: 16px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s cubic-bezier(0.34, 1.2, 0.64, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.dmk-plafon-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--dmk-brass);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45), 0 0 15px rgba(218, 165, 32, 0.15);
+}
+
+.dmk-plafon-visual-wrap {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, rgba(218, 165, 32, 0.4), rgba(255, 255, 255, 0.05), rgba(218, 165, 32, 0.8));
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    margin-bottom: 14px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.dmk-plafon-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+}
+
+.dmk-plafon-card:hover .dmk-plafon-img {
+    transform: scale(1.08) rotate(3deg);
+}
+
+.dmk-plafon-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(10, 25, 47, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.dmk-plafon-card:hover .dmk-plafon-overlay {
+    opacity: 1;
+}
+
+.dmk-plafon-overlay-inner {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--dmk-brass);
+    color: var(--dmk-carbon);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    transform: scale(0.8);
+    transition: transform 0.25s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+.dmk-plafon-card:hover .dmk-plafon-overlay-inner {
+    transform: scale(1);
+}
+
+.dmk-plafon-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+}
+
+.dmk-plafon-tag {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--dmk-brass);
+    background: rgba(218, 165, 32, 0.1);
+    padding: 2px 8px;
+    border-radius: var(--dmk-radius-pill);
+    border: 1px solid rgba(218, 165, 32, 0.25);
+}
+
+.dmk-plafon-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 4px 0 0;
+    line-height: 1.3;
+}
+
+.dmk-plafon-cta {
+    background: linear-gradient(135deg, var(--dmk-slate) 0%, rgba(20, 30, 48, 0.9) 100%);
+    border: 1px solid var(--dmk-steel);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dmk-plafon-cta-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--dmk-radius-sm);
+    background: rgba(218, 165, 32, 0.12);
+    border: 1px solid rgba(218, 165, 32, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+
 /* ═══════════════════════════════════════════════════════════════
    RESPONSIVE SYSTEM — MOBILE ONLY
    Desktop styles above are untouched.
@@ -2020,6 +2164,63 @@ html {
         border-top-right-radius: var(--dmk-radius-sm);
     }
     .dmk-dome-img { max-height: 82px !important; }
+
+    /* ====================================================
+       9B. CEILING / PLAFON SECTION (Mobile Bento 2-Col)
+       ==================================================== */
+    .dmk-ceiling-section { padding: 40px 0; }
+    .dmk-plafon-card {
+        padding: 10px 8px;
+        border-radius: var(--dmk-radius-sm);
+    }
+    .dmk-plafon-visual-wrap {
+        width: 86px;
+        height: 86px;
+        margin-bottom: 8px;
+        padding: 3px;
+    }
+    .dmk-plafon-overlay-inner {
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
+    }
+    .dmk-plafon-tag {
+        font-size: 0.58rem;
+        padding: 1px 6px;
+    }
+    .dmk-plafon-title {
+        font-size: 0.76rem;
+        line-height: 1.25;
+        margin-top: 3px;
+    }
+    .dmk-plafon-cta {
+        padding: 14px 12px !important;
+        text-align: center;
+        margin-top: 20px !important;
+    }
+    .dmk-plafon-cta .d-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 8px !important;
+    }
+    .dmk-plafon-cta-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
+    }
+    .dmk-plafon-cta h6 {
+        font-size: 0.85rem;
+    }
+    .dmk-plafon-cta p {
+        font-size: 0.72rem;
+    }
+    .dmk-plafon-cta .btn {
+        width: 100%;
+        margin-top: 4px;
+        font-size: 0.8rem;
+        padding: 8px 16px;
+    }
 
     /* ====================================================
        10. CAROUSELS (3 items on mobile + Floating Controls)

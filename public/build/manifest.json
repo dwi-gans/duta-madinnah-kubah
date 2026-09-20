@@ -1,0 +1,161 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-CSSQ26Ja.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/images/about-us.jpg": {
+    "file": "assets/about-us-Cowh5RJC.jpg",
+    "src": "resources/images/about-us.jpg"
+  },
+  "resources/images/alumunium.png": {
+    "file": "assets/alumunium-CNg50F17.png",
+    "src": "resources/images/alumunium.png"
+  },
+  "resources/images/carousel-header-item-1.jpg": {
+    "file": "assets/carousel-header-item-1-zXEVF2bU.jpg",
+    "src": "resources/images/carousel-header-item-1.jpg"
+  },
+  "resources/images/carousel-header-item-2.jpg": {
+    "file": "assets/carousel-header-item-2-BU9hzxJK.jpg",
+    "src": "resources/images/carousel-header-item-2.jpg"
+  },
+  "resources/images/carousel-header-item-3.jpg": {
+    "file": "assets/carousel-header-item-3-O5zxhkPM.jpg",
+    "src": "resources/images/carousel-header-item-3.jpg"
+  },
+  "resources/images/carousel-header-item-4.jpg": {
+    "file": "assets/carousel-header-item-4-DFGAbnOa.jpg",
+    "src": "resources/images/carousel-header-item-4.jpg"
+  },
+  "resources/images/carousel-header-item-5.jpg": {
+    "file": "assets/carousel-header-item-5-DrkjWe50.jpg",
+    "src": "resources/images/carousel-header-item-5.jpg"
+  },
+  "resources/images/enamel.png": {
+    "file": "assets/enamel-BIEiAlD3.png",
+    "src": "resources/images/enamel.png"
+  },
+  "resources/images/feature.jpg": {
+    "file": "assets/feature-C2p8qo2W.jpg",
+    "src": "resources/images/feature.jpg"
+  },
+  "resources/images/galvalum.png": {
+    "file": "assets/galvalum-DSNg2BN4.png",
+    "src": "resources/images/galvalum.png"
+  },
+  "resources/images/half-circle-type.png": {
+    "file": "assets/half-circle-type-DxUuRZvA.png",
+    "src": "resources/images/half-circle-type.png"
+  },
+  "resources/images/hero.jpg": {
+    "file": "assets/hero-kSC5R5aZ.jpg",
+    "src": "resources/images/hero.jpg"
+  },
+  "resources/images/logo.png": {
+    "file": "assets/logo-CGccklZZ.png",
+    "src": "resources/images/logo.png"
+  },
+  "resources/images/madinna-type.png": {
+    "file": "assets/madinna-type-COV-Adi8.png",
+    "src": "resources/images/madinna-type.png"
+  },
+  "resources/images/nabawi-type.png": {
+    "file": "assets/nabawi-type-Bb8B8uzJ.png",
+    "src": "resources/images/nabawi-type.png"
+  },
+  "resources/images/new_domes/bawang.png": {
+    "file": "assets/bawang-D646-pH6.png",
+    "src": "resources/images/new_domes/bawang.png"
+  },
+  "resources/images/new_domes/half-circle.png": {
+    "file": "assets/half-circle-BlvvL81c.png",
+    "src": "resources/images/new_domes/half-circle.png"
+  },
+  "resources/images/new_domes/madinna.png": {
+    "file": "assets/madinna-Bx51YRgW.png",
+    "src": "resources/images/new_domes/madinna.png"
+  },
+  "resources/images/new_domes/nabawi.png": {
+    "file": "assets/nabawi-Bi5tlxQ5.png",
+    "src": "resources/images/new_domes/nabawi.png"
+  },
+  "resources/images/new_domes/nanas.png": {
+    "file": "assets/nanas-B3ytAAqZ.png",
+    "src": "resources/images/new_domes/nanas.png"
+  },
+  "resources/images/new_domes/umbrella.png": {
+    "file": "assets/umbrella-BbMq6QPI.png",
+    "src": "resources/images/new_domes/umbrella.png"
+  },
+  "resources/images/onion-type.png": {
+    "file": "assets/onion-type-ByqrpwwJ.png",
+    "src": "resources/images/onion-type.png"
+  },
+  "resources/images/pineapple-type.png": {
+    "file": "assets/pineapple-type-YwrWe9R4.png",
+    "src": "resources/images/pineapple-type.png"
+  },
+  "resources/images/processed_domes/bawang.png": {
+    "file": "assets/bawang-BR9tn66R.png",
+    "src": "resources/images/processed_domes/bawang.png"
+  },
+  "resources/images/processed_domes/half-circle.png": {
+    "file": "assets/half-circle-D_ONJezv.png",
+    "src": "resources/images/processed_domes/half-circle.png"
+  },
+  "resources/images/processed_domes/madinna.png": {
+    "file": "assets/madinna-OR8v6Lqy.png",
+    "src": "resources/images/processed_domes/madinna.png"
+  },
+  "resources/images/processed_domes/nabawi.png": {
+    "file": "assets/nabawi-BgDZxaj3.png",
+    "src": "resources/images/processed_domes/nabawi.png"
+  },
+  "resources/images/processed_domes/nanas.png": {
+    "file": "assets/nanas-d2hF1lCH.png",
+    "src": "resources/images/processed_domes/nanas.png"
+  },
+  "resources/images/processed_domes/umbrella.png": {
+    "file": "assets/umbrella-DuDuEVAk.png",
+    "src": "resources/images/processed_domes/umbrella.png"
+  },
+  "resources/images/stainless-gold.png": {
+    "file": "assets/stainless-gold-YoCCxq4Q.png",
+    "src": "resources/images/stainless-gold.png"
+  },
+  "resources/images/transparent_domes/half-circle-type.png": {
+    "file": "assets/half-circle-type-DxUuRZvA.png",
+    "src": "resources/images/half-circle-type.png"
+  },
+  "resources/images/transparent_domes/madinna-type.png": {
+    "file": "assets/madinna-type-COV-Adi8.png",
+    "src": "resources/images/madinna-type.png"
+  },
+  "resources/images/transparent_domes/nabawi-type.png": {
+    "file": "assets/nabawi-type-Bb8B8uzJ.png",
+    "src": "resources/images/nabawi-type.png"
+  },
+  "resources/images/transparent_domes/onion-type.png": {
+    "file": "assets/onion-type-ByqrpwwJ.png",
+    "src": "resources/images/onion-type.png"
+  },
+  "resources/images/transparent_domes/pineapple-type.png": {
+    "file": "assets/pineapple-type-YwrWe9R4.png",
+    "src": "resources/images/pineapple-type.png"
+  },
+  "resources/images/transparent_domes/umbrella-type.png": {
+    "file": "assets/umbrella-type-CWRfdAco.png",
+    "src": "resources/images/transparent_domes/umbrella-type.png"
+  },
+  "resources/images/umbrella-type.png": {
+    "file": "assets/umbrella-type-CWRfdAco.png",
+    "src": "resources/images/transparent_domes/umbrella-type.png"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BHCmPXrf.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}

@@ -56,6 +56,9 @@
     {{-- Desain Kubah Masjid --}}
     @include('sections.dome-design')
 
+    {{-- Desain Plafon Interior Kubah --}}
+    @include('sections.ceiling-design')
+
     {{-- Portofolio Hasil Karya --}}
     @include('sections.portfolio')
 

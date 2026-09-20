@@ -17,6 +17,9 @@
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
+    <!-- Cropper.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css" />
+
     <!-- Scripts -->
     <style>
         [x-cloak] {
@@ -28,6 +31,9 @@
 
 <body class="font-sans antialiased bg-[#050B14] text-[#F4F7FB]" style="font-family: 'Plus Jakarta Sans', sans-serif;">
     {{ $slot }}
+
+    <!-- Cropper.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js"></script>
 </body>
 
 </html>

@@ -112,9 +112,7 @@
     }
     .cropper-modal {
         background-color: rgba(5, 11, 20, 0.8) !important;
-    }
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js"></script>
 
 <script>
     (function () {
@@ -134,6 +132,30 @@
         const rotRightBtn = document.getElementById('dmk-cropper-rotate-right');
         const ratioBtns = document.querySelectorAll('.dmk-ratio-btn');
 
+        function initCropperInstance() {
+            if (typeof Cropper === 'undefined') {
+                console.warn('Cropper library is still loading...');
+                setTimeout(initCropperInstance, 100);
+                return;
+            }
+
+            if (cropper) {
+                cropper.destroy();
+            }
+
+            cropper = new Cropper(cropperImg, {
+                aspectRatio: activeRatio,
+                viewMode: 1,
+                autoCropArea: 0.95,
+                responsive: true,
+                background: false,
+                movable: true,
+                rotatable: true,
+                scalable: true,
+                zoomable: true
+            });
+        }
+
         function openModal(file, inputEl) {
             activeInput = inputEl;
             originalFile = file;
@@ -144,24 +166,14 @@
                 modal.classList.add('flex');
                 document.body.classList.add('overflow-hidden');
 
-                if (cropper) {
-                    cropper.destroy();
+                // Tunggu image load dan library siap
+                if (cropperImg.complete) {
+                    initCropperInstance();
+                } else {
+                    cropperImg.onload = function() {
+                        initCropperInstance();
+                    };
                 }
-
-                cropper = new Cropper(cropperImg, {
-                    aspectRatio: activeRatio,
-                    viewMode: 1,
-                    autoCropArea: 0.95,
-                    responsive: true,
-                    background: false,
-                    movable: true,
-                    rotatable: true,
-                    scalable: true,
-                    zoomable: true,
-                    ready: function () {
-                        // Cropper siap
-                    }
-                });
             };
             reader.readAsDataURL(file);
         }

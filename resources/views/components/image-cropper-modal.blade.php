@@ -1,92 +1,96 @@
 <!-- Cropper.js Modal Component for Duta Madinna Kubah Admin -->
 <div id="dmk-cropper-modal" 
-     class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/85 backdrop-blur-md p-3 sm:p-4 overflow-y-auto"
+     style="display: none; position: fixed; inset: 0; z-index: 999999; background: rgba(5, 11, 20, 0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); align-items: center; justify-content: center; padding: 1rem; overflow-y: auto;"
      tabindex="-1"
      aria-modal="true"
      role="dialog">
-    <div class="relative w-full max-w-xl sm:max-w-2xl bg-[#0A1628] border border-[#1E3A64] rounded-2xl shadow-2xl overflow-hidden flex flex-col my-auto max-h-[92vh]">
+    <div style="position: relative; width: 100%; max-width: 680px; background: #0A1628; border: 1px solid #1E3A64; border-radius: 1.25rem; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7); overflow: hidden; display: flex; flex-direction: column; margin: auto; max-height: 92vh;">
         <!-- Header -->
-        <div class="flex items-center justify-between px-4 py-3.5 sm:px-5 sm:py-4 bg-[#0F2038] border-b border-[#1E3A64]">
-            <div class="flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-lg bg-[#C09A3E]/15 border border-[#C09A3E]/40 flex items-center justify-center text-[#D9B35A]">
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; background: #0F2038; border-bottom: 1px solid #1E3A64;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="width: 2.25rem; height: 2.25rem; border-radius: 0.5rem; background: rgba(192, 154, 62, 0.15); border: 1px solid rgba(192, 154, 62, 0.4); display: flex; align-items: center; justify-content: center; color: #D9B35A;">
                     <i class="fa-solid fa-crop-simple text-sm"></i>
                 </div>
                 <div>
-                    <h3 class="text-base sm:text-lg font-black text-white font-['Barlow_Condensed'] uppercase tracking-wider">
+                    <h3 style="margin: 0; font-size: 1.15rem; font-weight: 900; color: #FFFFFF; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.2;">
                         Sesuaikan / Potong Foto
                     </h3>
-                    <p class="text-[11px] text-[#8DA8CA] font-medium leading-none">
-                        Atur posisi agar pas dengan tampilan card & popup
+                    <p style="margin: 0; font-size: 0.75rem; color: #8DA8CA; font-weight: 500;">
+                        Atur posisi agar pas dengan tampilan card di website & mobile
                     </p>
                 </div>
             </div>
             <button type="button" 
                     id="dmk-cropper-cancel-btn" 
-                    class="w-8 h-8 rounded-lg flex items-center justify-center text-[#8DA8CA] hover:text-white hover:bg-[#1E3A64] transition">
-                <i class="fa-solid fa-xmark text-sm"></i>
+                    style="width: 2rem; height: 2rem; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; color: #8DA8CA; background: transparent; border: none; cursor: pointer; transition: all 0.15s ease;">
+                <i class="fa-solid fa-xmark text-base"></i>
             </button>
         </div>
 
         <!-- Canvas Container -->
-        <div class="relative w-full bg-[#050B14] flex items-center justify-center overflow-hidden p-2 sm:p-4" style="height: 360px; max-height: 50vh;">
-            <img id="dmk-cropper-image" src="" alt="Potong Gambar" class="max-w-full max-h-full block">
+        <div style="position: relative; width: 100%; height: 380px; max-height: 52vh; background: #050B14; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 0.5rem;">
+            <img id="dmk-cropper-image" src="" alt="Potong Gambar" style="max-width: 100%; max-height: 100%; display: block;">
         </div>
 
         <!-- Aspect Ratio & Control Toolbar -->
-        <div class="px-4 py-3 bg-[#0A1628] border-t border-[#1E3A64]/70 flex flex-wrap items-center justify-between gap-2.5 text-xs">
+        <div style="padding: 0.75rem 1rem; background: #0A1628; border-top: 1px solid rgba(30, 58, 100, 0.7); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.6rem;">
             <!-- Ratio Buttons -->
-            <div class="flex items-center gap-1.5 bg-[#050B14] p-1 rounded-xl border border-[#1E3A64]">
-                <span class="text-[10px] font-bold text-[#8DA8CA] uppercase px-2 font-['Barlow_Condensed']">Rasio:</span>
+            <div style="display: flex; align-items: center; gap: 0.35rem; background: #050B14; padding: 0.25rem 0.35rem; border-radius: 0.75rem; border: 1px solid #1E3A64;">
+                <span style="font-size: 0.65rem; font-weight: 700; color: #8DA8CA; text-transform: uppercase; padding: 0 0.4rem; font-family: 'Barlow Condensed', sans-serif;">Rasio:</span>
                 <button type="button" 
                         data-ratio="1.14" 
-                        class="dmk-ratio-btn px-2.5 py-1 rounded-lg font-['Barlow_Condensed'] font-bold uppercase tracking-wider text-xs transition bg-[#C09A3E] text-[#050B14]">
+                        class="dmk-ratio-btn active"
+                        style="padding: 0.25rem 0.65rem; border-radius: 0.5rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; cursor: pointer; border: none; background: #C09A3E; color: #050B14; transition: all 0.15s ease;">
                     <i class="fa-solid fa-table-cells me-1"></i> Pas Card
                 </button>
                 <button type="button" 
                         data-ratio="1.333" 
-                        class="dmk-ratio-btn px-2.5 py-1 rounded-lg font-['Barlow_Condensed'] font-bold uppercase tracking-wider text-xs transition text-[#8DA8CA] hover:text-white">
+                        class="dmk-ratio-btn"
+                        style="padding: 0.25rem 0.65rem; border-radius: 0.5rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; cursor: pointer; border: none; background: transparent; color: #8DA8CA; transition: all 0.15s ease;">
                     4:3
                 </button>
                 <button type="button" 
                         data-ratio="1.777" 
-                        class="dmk-ratio-btn px-2.5 py-1 rounded-lg font-['Barlow_Condensed'] font-bold uppercase tracking-wider text-xs transition text-[#8DA8CA] hover:text-white">
+                        class="dmk-ratio-btn"
+                        style="padding: 0.25rem 0.65rem; border-radius: 0.5rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; cursor: pointer; border: none; background: transparent; color: #8DA8CA; transition: all 0.15s ease;">
                     16:9
                 </button>
                 <button type="button" 
                         data-ratio="free" 
-                        class="dmk-ratio-btn px-2.5 py-1 rounded-lg font-['Barlow_Condensed'] font-bold uppercase tracking-wider text-xs transition text-[#8DA8CA] hover:text-white">
+                        class="dmk-ratio-btn"
+                        style="padding: 0.25rem 0.65rem; border-radius: 0.5rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; cursor: pointer; border: none; background: transparent; color: #8DA8CA; transition: all 0.15s ease;">
                     Bebas
                 </button>
             </div>
 
-            <!-- Rotate & Zoom Tools -->
-            <div class="flex items-center gap-1">
-                <button type="button" id="dmk-cropper-rotate-left" title="Putar Kiri" class="w-8 h-8 rounded-lg bg-[#0F2038] border border-[#1E3A64] text-[#8DA8CA] hover:text-white flex items-center justify-center transition">
+            <!-- Rotate & Reset Tools -->
+            <div style="display: flex; align-items: center; gap: 0.35rem;">
+                <button type="button" id="dmk-cropper-rotate-left" title="Putar Kiri 90°" style="width: 2rem; height: 2rem; border-radius: 0.5rem; background: #0F2038; border: 1px solid #1E3A64; color: #8DA8CA; display: flex; align-items: center; justify-content: center; cursor: pointer;">
                     <i class="fa-solid fa-rotate-left text-xs"></i>
                 </button>
-                <button type="button" id="dmk-cropper-rotate-right" title="Putar Kanan" class="w-8 h-8 rounded-lg bg-[#0F2038] border border-[#1E3A64] text-[#8DA8CA] hover:text-white flex items-center justify-center transition">
+                <button type="button" id="dmk-cropper-rotate-right" title="Putar Kanan 90°" style="width: 2rem; height: 2rem; border-radius: 0.5rem; background: #0F2038; border: 1px solid #1E3A64; color: #8DA8CA; display: flex; align-items: center; justify-content: center; cursor: pointer;">
                     <i class="fa-solid fa-rotate-right text-xs"></i>
                 </button>
-                <button type="button" id="dmk-cropper-reset" title="Reset Posisi" class="w-8 h-8 rounded-lg bg-[#0F2038] border border-[#1E3A64] text-[#8DA8CA] hover:text-white flex items-center justify-center transition">
+                <button type="button" id="dmk-cropper-reset" title="Reset Posisi" style="width: 2rem; height: 2rem; border-radius: 0.5rem; background: #0F2038; border: 1px solid #1E3A64; color: #8DA8CA; display: flex; align-items: center; justify-content: center; cursor: pointer;">
                     <i class="fa-solid fa-arrows-rotate text-xs"></i>
                 </button>
             </div>
         </div>
 
         <!-- Footer Action -->
-        <div class="px-4 py-3 sm:px-5 sm:py-3.5 bg-[#050B14] border-t border-[#1E3A64] flex items-center justify-between gap-3">
-            <p class="text-[11px] text-[#8DA8CA] hidden sm:block">
-                <i class="fa-solid fa-circle-info text-[#D9B35A] me-1"></i> Geser & cubit/scroll untuk memperbesar atau menyesuaikan foto.
+        <div style="padding: 0.85rem 1.25rem; background: #050B14; border-top: 1px solid #1E3A64; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;">
+            <p style="margin: 0; font-size: 0.75rem; color: #8DA8CA;">
+                <i class="fa-solid fa-circle-info" style="color: #D9B35A; margin-right: 0.35rem;"></i> Geser atau scroll foto untuk menyesuaikan.
             </p>
-            <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
                 <button type="button" 
                         id="dmk-cropper-skip-btn" 
-                        class="flex-1 sm:flex-none px-3.5 py-2 bg-[#0F2038] border border-[#1E3A64] rounded-xl text-xs font-bold uppercase tracking-wider font-['Barlow_Condensed'] text-[#8DA8CA] hover:text-white transition">
+                        style="padding: 0.5rem 1rem; background: #0F2038; border: 1px solid #1E3A64; border-radius: 0.75rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; font-family: 'Barlow Condensed', sans-serif; color: #8DA8CA; cursor: pointer;">
                     Gunakan Asli
                 </button>
                 <button type="button" 
                         id="dmk-cropper-apply-btn" 
-                        class="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-5 py-2 bg-[#C09A3E] border border-[#D9B35A] rounded-xl font-['Barlow_Condensed'] font-extrabold text-xs text-[#050B14] uppercase tracking-widest hover:bg-[#D9B35A] transition shadow-md">
+                        style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1.25rem; background: #C09A3E; border: 1px solid #D9B35A; border-radius: 0.75rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 0.75rem; color: #050B14; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(192, 154, 62, 0.3);">
                     <i class="fa-solid fa-check text-xs"></i> Pasang Foto
                 </button>
             </div>
@@ -94,8 +98,6 @@
     </div>
 </div>
 
-<!-- Cropper.js Styles & Script Loader -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css" />
 <style>
     /* Styling khusus cropper box agar selaras dark luxury DMK */
     .cropper-view-box {
@@ -112,6 +114,7 @@
     }
     .cropper-modal {
         background-color: rgba(5, 11, 20, 0.8) !important;
+    }
 </style>
 
 <script>
@@ -119,8 +122,7 @@
         let cropper = null;
         let activeInput = null;
         let originalFile = null;
-        let defaultRatio = 1.14; // Rasio card DMK (width ~400 / height 350)
-        let activeRatio = defaultRatio;
+        let activeRatio = 1.14; // Default Rasio Card DMK (lebar ~400px / tinggi 350px)
 
         const modal = document.getElementById('dmk-cropper-modal');
         const cropperImg = document.getElementById('dmk-cropper-image');
@@ -134,7 +136,6 @@
 
         function initCropperInstance() {
             if (typeof Cropper === 'undefined') {
-                console.warn('Cropper library is still loading...');
                 setTimeout(initCropperInstance, 100);
                 return;
             }
@@ -159,44 +160,46 @@
         function openModal(file, inputEl) {
             activeInput = inputEl;
             originalFile = file;
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                cropperImg.src = e.target.result;
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-                document.body.classList.add('overflow-hidden');
 
-                // Tunggu image load dan library siap
-                if (cropperImg.complete) {
+            // Buat Object URL instan (0 milidetik, tanpa tunggu FileReader baca seluruh file)
+            const objectUrl = URL.createObjectURL(file);
+            cropperImg.src = objectUrl;
+
+            // Buka modal langsung di tengah layar dengan z-index tertinggi
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+
+            // Inisialisasi cropper begitu gambar siap
+            if (cropperImg.complete) {
+                initCropperInstance();
+            } else {
+                cropperImg.onload = function() {
                     initCropperInstance();
-                } else {
-                    cropperImg.onload = function() {
-                        initCropperInstance();
-                    };
-                }
-            };
-            reader.readAsDataURL(file);
+                };
+            }
         }
 
         function closeModal() {
-            modal.classList.remove('flex');
-            modal.classList.add('hidden');
-            document.body.classList.remove('overflow-hidden');
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
             if (cropper) {
                 cropper.destroy();
                 cropper = null;
             }
+            if (cropperImg.src && cropperImg.src.startsWith('blob:')) {
+                URL.revokeObjectURL(cropperImg.src);
+            }
             cropperImg.src = '';
         }
 
-        // Handle File Input Change secara global untuk semua input file berlabel 'image'
+        // Listener change file input secara global
         document.addEventListener('change', function (e) {
             if (e.target && e.target.type === 'file' && e.target.name === 'image') {
                 const files = e.target.files;
                 if (files && files.length > 0) {
                     const file = files[0];
                     if (file.type.startsWith('image/')) {
-                        // Cek jika file ini bukan hasil crop kita sendiri
+                        // Jangan buka jika file ini adalah hasil crop kita sendiri
                         if (!e.target._croppedFile) {
                             openModal(file, e.target);
                         }
@@ -205,7 +208,7 @@
             }
         });
 
-        // Tombol Cancel (Batalkan pemilihan gambar)
+        // Tombol Cancel (X)
         if (cancelBtn) {
             cancelBtn.addEventListener('click', function () {
                 if (activeInput && !activeInput._croppedFile) {
@@ -215,21 +218,21 @@
             });
         }
 
-        // Tombol Skip (Gunakan foto asli tanpa crop)
+        // Tombol Skip (Gunakan Asli tanpa potong)
         if (skipBtn) {
             skipBtn.addEventListener('click', function () {
                 closeModal();
             });
         }
 
-        // Tombol Reset
+        // Reset
         if (resetBtn) {
             resetBtn.addEventListener('click', function () {
                 if (cropper) cropper.reset();
             });
         }
 
-        // Tombol Putar
+        // Putar Kiri / Kanan
         if (rotLeftBtn) {
             rotLeftBtn.addEventListener('click', function () {
                 if (cropper) cropper.rotate(-90);
@@ -241,15 +244,15 @@
             });
         }
 
-        // Tombol Ganti Rasio
+        // Tombol Pilih Rasio
         ratioBtns.forEach(btn => {
             btn.addEventListener('click', function () {
                 ratioBtns.forEach(b => {
-                    b.classList.remove('bg-[#C09A3E]', 'text-[#050B14]');
-                    b.classList.add('text-[#8DA8CA]');
+                    b.style.background = 'transparent';
+                    b.style.color = '#8DA8CA';
                 });
-                this.classList.add('bg-[#C09A3E]', 'text-[#050B14]');
-                this.classList.remove('text-[#8DA8CA]');
+                this.style.background = '#C09A3E';
+                this.style.color = '#050B14';
 
                 const val = this.getAttribute('data-ratio');
                 if (val === 'free') {
@@ -264,12 +267,11 @@
             });
         });
 
-        // Tombol Terapkan (Potong Foto & Masukkan ke Input File)
+        // Tombol Pasang Foto (Terapkan Crop ke Form)
         if (applyBtn) {
             applyBtn.addEventListener('click', function () {
                 if (!cropper || !activeInput || !originalFile) return;
 
-                // Dapatkan canvas hasil potongan
                 const canvas = cropper.getCroppedCanvas({
                     maxWidth: 1600,
                     maxHeight: 1600,
@@ -282,21 +284,19 @@
                     return;
                 }
 
-                // Ubah canvas menjadi Blob File
                 canvas.toBlob(function (blob) {
-                    const ext = originalFile.name.split('.').pop() || 'jpg';
                     const newFile = new File([blob], originalFile.name, {
                         type: originalFile.type || 'image/jpeg',
                         lastModified: Date.now()
                     });
 
-                    // Gunakan DataTransfer API untuk inject file baru ke input HTML
+                    // Masukkan file hasil crop ke dalam input file form via DataTransfer
                     const dataTransfer = new DataTransfer();
                     dataTransfer.items.add(newFile);
                     activeInput._croppedFile = true;
                     activeInput.files = dataTransfer.files;
 
-                    // Update preview kecil jika ada di form
+                    // Update / Tampilkan preview thumbnail di form
                     const form = activeInput.closest('form');
                     if (form) {
                         let previewImg = form.querySelector('img[data-crop-preview]');
@@ -306,26 +306,26 @@
                         if (previewImg) {
                             previewImg.src = canvas.toDataURL();
                         } else {
-                            // Buat preview thumbnail baru jika belum ada
                             const thumb = document.createElement('img');
                             thumb.src = canvas.toDataURL();
-                            thumb.className = 'my-2 rounded-lg border border-[#C09A3E]/60 shadow-lg';
-                            thumb.style.maxWidth = '180px';
-                            thumb.style.maxHeight = '140px';
-                            thumb.style.objectFit = 'cover';
+                            thumb.style.cssText = 'display: block; margin: 0.5rem 0; border-radius: 0.5rem; border: 1px solid rgba(192, 154, 62, 0.6); max-width: 180px; max-height: 130px; object-fit: cover; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5);';
                             thumb.setAttribute('data-crop-preview', 'true');
                             activeInput.parentNode.insertBefore(thumb, activeInput);
                         }
                     }
 
-                    // Tampilkan notifikasi kecil
-                    const badge = document.createElement('span');
-                    badge.className = 'inline-block mt-1 text-[11px] text-[#8CE0C0] font-bold';
-                    badge.innerHTML = '<i class="fa-solid fa-check-circle me-1"></i> Foto siap di-upload!';
-                    activeInput.parentNode.appendChild(badge);
+                    // Tampilkan badge info sukses potong
+                    let badge = activeInput.parentNode.querySelector('.dmk-crop-badge');
+                    if (!badge) {
+                        badge = document.createElement('span');
+                        badge.className = 'dmk-crop-badge';
+                        badge.style.cssText = 'display: inline-block; margin-top: 0.35rem; font-size: 0.72rem; font-weight: 700; color: #8CE0C0;';
+                        activeInput.parentNode.appendChild(badge);
+                    }
+                    badge.innerHTML = '<i class="fa-solid fa-check-circle" style="margin-right: 0.3rem;"></i> Foto berhasil dipotong & siap disimpan!';
                     setTimeout(() => badge.remove(), 4000);
 
-                    // Reset flag setelah event loop selesai
+                    // Reset flag setelah form terisi
                     setTimeout(() => {
                         if (activeInput) activeInput._croppedFile = false;
                     }, 500);

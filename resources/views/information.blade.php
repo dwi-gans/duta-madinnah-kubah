@@ -91,85 +91,6 @@
                                             </button>
                                         </div>
                                     </td>
-
-                                    <!-- Modal Edit -->
-                                    <x-modal name="edit-data-{{ $info->id }}">
-                                        <form action="{{ route('information.update', $info) }}" method="POST"
-                                            enctype="multipart/form-data" class="block w-full">
-                                            @csrf
-                                            @method('PUT')
-
-                                            <div class="bg-[#0A1628] px-5 pt-6 pb-5 border-b border-[#1E3A64]">
-                                                <div class="flex flex-col gap-4">
-                                                    <h3 class="text-lg font-black text-white font-['Barlow_Condensed'] uppercase tracking-wider flex items-center gap-2">
-                                                        <i class="fa-solid fa-pen-to-square text-[#D9B35A]"></i> Sunting Informasi & Promo
-                                                    </h3>
-
-                                                    <div>
-                                                        <x-input-label for="title-{{ $info->id }}" value="Judul Informasi" />
-                                                        <x-text-input id="title-{{ $info->id }}" name="title" placeholder="Judul promo/informasi"
-                                                            class="w-full" :value="old('title', $info->title)" />
-                                                        @error('title')
-                                                            <p class="text-red-400 text-xs mt-1">{{ $message }}</p>
-                                                        @enderror
-                                                    </div>
-
-                                                    <div>
-                                                        <x-input-label for="description-{{ $info->id }}" value="Deskripsi (Opsional)" />
-                                                        <x-textarea-input id="description-{{ $info->id }}" name="description"
-                                                            placeholder="Deskripsi singkat promo atau informasi...">{{ old('description', $info->description) }}</x-textarea-input>
-                                                        @error('description')
-                                                            <p class="text-red-400 text-xs mt-1">{{ $message }}</p>
-                                                        @enderror
-                                                    </div>
-
-                                                    <div>
-                                                        <x-input-label for="image-{{ $info->id }}" value="File Gambar / Banner" />
-                                                        <img src="{{ $info->image_url }}"
-                                                            class="mb-2 rounded-lg border border-[#1E3A64]" style="max-width: 180px; max-height: 120px; object-fit: cover;" alt="Current Image">
-                                                        <x-text-input id="image-{{ $info->id }}" name="image" type="file"
-                                                            accept="image/jpeg,image/jpg,image/png,image/gif,image/webp"
-                                                            class="mt-1 w-full file:border-0 file:rounded-lg file:mr-2 file:bg-[#0F2038] file:border file:border-[#1E3A64] file:px-3.5 file:py-1.5 file:text-xs file:font-bold file:text-[#D9B35A]" />
-                                                        <p class="text-[11px] text-[#8DA8CA] mt-1">Format: JPEG, JPG, PNG, GIF, WEBP (Max: 2MB). Kosongkan jika tidak ingin mengganti gambar.</p>
-                                                        @error('image')
-                                                            <p class="text-red-400 text-xs mt-1">{{ $message }}</p>
-                                                        @enderror
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="bg-[#050B14] px-5 py-4 flex flex-col sm:flex sm:flex-row-reverse sm:px-6 gap-3">
-                                                <x-primary-button class="justify-center">Simpan Perubahan</x-primary-button>
-                                                <x-light-button type="button" class="justify-center"
-                                                    x-on:click="$dispatch('close')">Batal</x-light-button>
-                                            </div>
-                                        </form>
-                                    </x-modal>
-
-                                    <!-- Modal Delete -->
-                                    <x-modal name="delete-data-{{ $info->id }}">
-                                        <form action="{{ route('information.destroy', $info) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-
-                                            <div class="bg-[#0A1628] px-5 pt-6 pb-5 border-b border-[#1E3A64]">
-                                                <div class="flex flex-col gap-3">
-                                                    <h3 class="text-lg font-black text-white font-['Barlow_Condensed'] uppercase tracking-wider flex items-center gap-2">
-                                                        <i class="fa-solid fa-triangle-exclamation text-red-400"></i> Hapus Informasi
-                                                    </h3>
-                                                    <p class="text-sm text-[#8DA8CA]">Yakin ingin menghapus data "<strong class="text-white">{{ $info->title }}</strong>"? Tindakan ini tidak dapat dibatalkan.</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="bg-[#050B14] px-5 py-4 sm:flex sm:flex-row-reverse sm:px-6 gap-3">
-                                                <button type="submit" class="inline-flex items-center justify-center px-4 py-2.5 bg-red-600 border border-red-500 rounded-xl font-['Barlow_Condensed'] font-extrabold text-xs text-white uppercase tracking-widest hover:bg-red-700 transition cursor-pointer shadow-md">
-                                                    Ya, Hapus Data
-                                                </button>
-                                                <x-light-button type="button"
-                                                    x-on:click="$dispatch('close')">Batal</x-light-button>
-                                            </div>
-                                        </form>
-                                    </x-modal>
                                 </tr>
                             @empty
                                 <tr>
@@ -182,6 +103,88 @@
                         </tbody>
                     </table>
                 </div>
+
+                <!-- Modals (Edit & Delete for each item) -->
+                @foreach ($information as $info)
+                    <!-- Modal Edit -->
+                    <x-modal name="edit-data-{{ $info->id }}">
+                        <form action="{{ route('information.update', $info) }}" method="POST"
+                            enctype="multipart/form-data" class="block w-full">
+                            @csrf
+                            @method('PUT')
+
+                            <div class="bg-[#0A1628] px-5 pt-6 pb-5 border-b border-[#1E3A64]">
+                                <div class="flex flex-col gap-4">
+                                    <h3 class="text-lg font-black text-white font-['Barlow_Condensed'] uppercase tracking-wider flex items-center gap-2">
+                                        <i class="fa-solid fa-pen-to-square text-[#D9B35A]"></i> Sunting Informasi & Promo
+                                    </h3>
+
+                                    <div>
+                                        <x-input-label for="title-{{ $info->id }}" value="Judul Informasi" />
+                                        <x-text-input id="title-{{ $info->id }}" name="title" placeholder="Judul promo/informasi"
+                                            class="w-full" :value="old('title', $info->title)" />
+                                        @error('title')
+                                            <p class="text-red-400 text-xs mt-1">{{ $message }}</p>
+                                        @enderror
+                                    </div>
+
+                                    <div>
+                                        <x-input-label for="description-{{ $info->id }}" value="Deskripsi (Opsional)" />
+                                        <x-textarea-input id="description-{{ $info->id }}" name="description"
+                                            placeholder="Deskripsi singkat promo atau informasi...">{{ old('description', $info->description) }}</x-textarea-input>
+                                        @error('description')
+                                            <p class="text-red-400 text-xs mt-1">{{ $message }}</p>
+                                        @enderror
+                                    </div>
+
+                                    <div>
+                                        <x-input-label for="image-{{ $info->id }}" value="File Gambar / Banner" />
+                                        <img src="{{ $info->image_url }}"
+                                            class="mb-2 rounded-lg border border-[#1E3A64]" style="max-width: 180px; max-height: 120px; object-fit: cover;" alt="Current Image">
+                                        <x-text-input id="image-{{ $info->id }}" name="image" type="file"
+                                            accept="image/jpeg,image/jpg,image/png,image/gif,image/webp"
+                                            class="mt-1 w-full file:border-0 file:rounded-lg file:mr-2 file:bg-[#0F2038] file:border file:border-[#1E3A64] file:px-3.5 file:py-1.5 file:text-xs file:font-bold file:text-[#D9B35A]" />
+                                        <p class="text-[11px] text-[#8DA8CA] mt-1">Format: JPEG, JPG, PNG, GIF, WEBP (Max: 5MB). Kosongkan jika tidak ingin mengganti gambar.</p>
+                                        @error('image')
+                                            <p class="text-red-400 text-xs mt-1">{{ $message }}</p>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-[#050B14] px-5 py-4 flex flex-col sm:flex sm:flex-row-reverse sm:px-6 gap-3">
+                                <x-primary-button class="justify-center">Simpan Perubahan</x-primary-button>
+                                <x-light-button type="button" class="justify-center"
+                                    x-on:click="$dispatch('close')">Batal</x-light-button>
+                            </div>
+                        </form>
+                    </x-modal>
+
+                    <!-- Modal Delete -->
+                    <x-modal name="delete-data-{{ $info->id }}">
+                        <form action="{{ route('information.destroy', $info) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+
+                            <div class="bg-[#0A1628] px-5 pt-6 pb-5 border-b border-[#1E3A64]">
+                                <div class="flex flex-col gap-3">
+                                    <h3 class="text-lg font-black text-white font-['Barlow_Condensed'] uppercase tracking-wider flex items-center gap-2">
+                                        <i class="fa-solid fa-triangle-exclamation text-red-400"></i> Hapus Informasi
+                                    </h3>
+                                    <p class="text-sm text-[#8DA8CA]">Yakin ingin menghapus data "<strong class="text-white">{{ $info->title }}</strong>"? Tindakan ini tidak dapat dibatalkan.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-[#050B14] px-5 py-4 sm:flex sm:flex-row-reverse sm:px-6 gap-3">
+                                <button type="submit" class="inline-flex items-center justify-center px-4 py-2.5 bg-red-600 border border-red-500 rounded-xl font-['Barlow_Condensed'] font-extrabold text-xs text-white uppercase tracking-widest hover:bg-red-700 transition cursor-pointer shadow-md">
+                                    Ya, Hapus Data
+                                </button>
+                                <x-light-button type="button"
+                                    x-on:click="$dispatch('close')">Batal</x-light-button>
+                            </div>
+                        </form>
+                    </x-modal>
+                @endforeach
             </div>
         </div>
     </div>
@@ -221,7 +224,7 @@
                         <x-text-input id="image" name="image" type="file"
                             accept="image/jpeg,image/jpg,image/png,image/gif,image/webp"
                             class="w-full file:border-0 file:rounded-lg file:mr-2 file:bg-[#0F2038] file:border file:border-[#1E3A64] file:px-3.5 file:py-1.5 file:text-xs file:font-bold file:text-[#D9B35A]" />
-                        <p class="text-[11px] text-[#8DA8CA] mt-1">Format: JPEG, JPG, PNG, GIF, WEBP (Max: 2MB)</p>
+                        <p class="text-[11px] text-[#8DA8CA] mt-1">Format: JPEG, JPG, PNG, GIF, WEBP (Max: 5MB)</p>
                         @error('image')
                             <p class="text-red-400 text-xs mt-1">{{ $message }}</p>
                         @enderror

@@ -1,6 +1,6 @@
 <!-- Hero Section -->
 <section id="home" class="dmk-hero-section">
-    <div class="carousel slide carousel-fade" data-bs-ride="carousel" id="heroCarousel" data-bs-interval="5500">
+    <div class="carousel slide carousel-fade" data-bs-ride="carousel" id="heroCarousel" data-bs-interval="5500" data-bs-pause="false">
         <div class="carousel-inner">
             <x-carousel-header-item
                 :src="Vite::image('carousel-header-item-1.jpg')"

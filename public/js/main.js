@@ -113,10 +113,11 @@
         center: false,
         margin: 24,
         stagePadding: 0,
+        autoplayHoverPause: false,
         responsive: {
             0: {
-                items: 1,
-                margin: 16,
+                items: 2,
+                margin: 10,
                 center: false,
                 stagePadding: 0,
             },
@@ -143,10 +144,11 @@
         center: false,
         margin: 24,
         stagePadding: 0,
+        autoplayHoverPause: false,
         responsive: {
             0: {
-                items: 1,
-                margin: 16,
+                items: 2,
+                margin: 10,
                 center: false,
                 stagePadding: 0,
             },
@@ -167,26 +169,27 @@
 
     $(".dome-carousel").owlCarousel({
         autoplay: true,
-        smartSpeed: 1500,
+        smartSpeed: 600,
         dots: true,
         loop: true,
-        center: true,
+        center: false,
         margin: 30,
+        autoplayHoverPause: false,
         responsive: {
             0: {
-                items: 1,
-                center: true,
-                margin: 16,
+                items: 2,
+                center: false,
+                margin: 10,
                 stagePadding: 0,
             },
             576: {
                 items: 2,
-                center: true,
+                center: false,
                 margin: 16,
             },
             768: {
                 items: 2,
-                center: true,
+                center: false,
                 margin: 24,
             },
             992: {

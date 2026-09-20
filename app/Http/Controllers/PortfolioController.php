@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Portfolio;
 use App\Services\SupabaseStorageService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class PortfolioController extends Controller
 {
@@ -38,6 +39,8 @@ class PortfolioController extends Controller
             'image_path'  => $imageUrl,
         ]);
 
+        Cache::forget('home_portfolios');
+
         return back()->with('success', 'Portofolio berhasil ditambahkan!');
     }
 
@@ -58,9 +61,7 @@ class PortfolioController extends Controller
         $imageUrl = $portfolio->image_path;
 
         if ($request->hasFile('image')) {
-            // Hapus gambar lama dari Supabase
             $storage->delete($portfolio->image_path);
-            // Upload gambar baru
             $imageUrl = $storage->upload($request->file('image'));
         }
 
@@ -70,6 +71,8 @@ class PortfolioController extends Controller
             'image_path'  => $imageUrl,
         ]);
 
+        Cache::forget('home_portfolios');
+
         return back()->with('success', 'Portofolio berhasil diperbarui!');
     }
 
@@ -77,6 +80,8 @@ class PortfolioController extends Controller
     {
         $storage->delete($portfolio->image_path);
         $portfolio->delete();
+
+        Cache::forget('home_portfolios');
 
         return back()->with('success', 'Portofolio berhasil dihapus!');
     }

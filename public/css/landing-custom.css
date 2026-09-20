@@ -1986,37 +1986,58 @@ html {
     }
 
     /* ====================================================
-       3. HERO (Responsive Image — Tidak Terpotong di Mobile)
+       3. HERO (Showcase Uncropped Layout on Mobile)
+       Foto tampil proporsional tanpa crop ekstrem,
+       teks & CTA tersusun rapi di bawahnya.
        ==================================================== */
+    .dmk-hero-section {
+        background: var(--dmk-carbon);
+    }
+
+    .dmk-hero-section .carousel-inner {
+        overflow: hidden;
+    }
+
     .dmk-hero-section .carousel-item {
-        min-height: 520px !important;
-        height: clamp(500px, 74vh, 620px) !important;
-        position: relative;
+        min-height: auto !important;
+        height: auto !important;
+        position: relative !important;
+        background: var(--dmk-carbon);
     }
+
+    /* Foto Hero di Mobile: Proporsional (~16:9), jernih, tanpa crop ekstrem */
     .dmk-hero-img {
-        min-height: 520px !important;
-        height: 100% !important;
+        position: relative !important;
+        inset: auto !important;
         width: 100% !important;
+        height: clamp(210px, 58vw, 275px) !important;
+        min-height: clamp(210px, 58vw, 275px) !important;
+        max-height: 275px !important;
         object-fit: cover !important;
-        object-position: center 20% !important; /* Fokus pada kubah & arsitektur masjid */
-        filter: brightness(0.68) contrast(1.1) !important;
+        object-position: center !important;
+        filter: brightness(0.95) contrast(1.05) !important;
+        display: block !important;
     }
 
-    /* Vertical Gradient Overlay on Mobile: bagian atas jernih, bawah gelap untuk teks */
-    .dmk-hero-overlay {
-        background: linear-gradient(180deg,
-            rgba(5, 11, 20, 0.20) 0%,
-            rgba(5, 11, 20, 0.45) 30%,
-            rgba(5, 11, 20, 0.85) 65%,
-            rgba(5, 11, 20, 0.98) 100%
-        ) !important;
+    /* Sembunyikan overlay gelap di atas foto agar gambar tampil jernih & cerah */
+    .dmk-hero-overlay,
+    .dmk-hero-geo-overlay {
+        display: none !important;
     }
 
-    /* Content: letakkan di bagian bawah agar kubah di atas tampak jelas */
+    /* Area Konten Teks: diletakkan di bawah foto dengan background navy mewah */
     .dmk-hero-content-wrap {
-        padding-top: 90px !important;
-        padding-bottom: 35px !important;
-        align-items: flex-end !important;
+        position: relative !important;
+        inset: auto !important;
+        background: linear-gradient(180deg, #0b1522 0%, #060c14 100%) !important;
+        padding: 20px 16px 28px 16px !important;
+        display: block !important;
+        border-top: 1px solid rgba(218, 165, 32, 0.25) !important;
+    }
+
+    .dmk-hero-content-wrap .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 
     /* Eyebrow badge */
@@ -2025,35 +2046,66 @@ html {
         padding: 4px 10px;
         letter-spacing: 0.07em;
         margin-bottom: 8px !important;
+        display: inline-flex;
     }
 
-    /* Headline: clamp so it NEVER overflows */
+    /* Headline: tegas, tidak terpotong, tidak tertabrak tombol panah */
     .dmk-hero-headline {
-        font-size: clamp(1.2rem, 5vw, 1.6rem);
-        line-height: 1.12;
-        margin-bottom: 0.6rem;
-        word-break: break-word;
-        hyphens: auto;
+        font-size: clamp(1.25rem, 5.2vw, 1.55rem) !important;
+        line-height: 1.25 !important;
+        margin-bottom: 0.65rem !important;
+        color: #FFFFFF !important;
+        text-shadow: none !important;
+        min-height: 2.5em;
     }
 
     /* Subtitle */
     .dmk-hero-sub {
-        font-size: 0.8rem;
-        line-height: 1.5;
-        margin-bottom: 1rem;
-        max-width: 100%;
+        font-size: 0.82rem !important;
+        line-height: 1.55 !important;
+        margin-bottom: 1.25rem !important;
+        color: rgba(255, 255, 255, 0.85) !important;
+        min-height: 4.6em;
     }
 
-    /* CTA buttons: full width, compact */
+    /* CTA buttons */
+    .dmk-hero-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+
     .dmk-btn-primary,
     .dmk-btn-outline-light {
-        width: 100%;
-        padding: 10px 14px;
-        font-size: 0.84rem;
-        justify-content: center;
+        width: 100% !important;
+        padding: 12px 14px !important;
+        font-size: 0.86rem !important;
+        justify-content: center !important;
+        border-radius: var(--dmk-radius-sm) !important;
     }
 
-    /* Arrow controls on mobile — strictly semi-transparent dark, never turns/stays yellow */
+    /* Tombol Navigasi Panah Carousel di Mobile: Mengambang elegan di atas foto */
+    .carousel-control-prev,
+    .carousel-control-next {
+        position: absolute !important;
+        top: clamp(105px, 29vw, 137px) !important;
+        bottom: auto !important;
+        transform: translateY(-50%) !important;
+        width: 38px !important;
+        height: 38px !important;
+        z-index: 20 !important;
+        opacity: 0.95 !important;
+    }
+    .carousel-control-prev {
+        left: 8px !important;
+        right: auto !important;
+    }
+    .carousel-control-next {
+        right: 8px !important;
+        left: auto !important;
+    }
+
+    /* Arrow controls on mobile — semi-transparent dark, tidak pernah menempel kuning */
     .carousel-control-prev .dmk-hero-arrow,
     .carousel-control-next .dmk-hero-arrow,
     .carousel-control-prev:hover .dmk-hero-arrow,
@@ -2073,13 +2125,28 @@ html {
         color: #FFFFFF !important;
         border: 1px solid var(--dmk-steel) !important;
         outline: none !important;
-        box-shadow: none !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+        backdrop-filter: blur(4px) !important;
     }
 
-    /* Slide indicators */
-    .dmk-carousel-indicators { bottom: 60px; }
-    .dmk-carousel-indicators button { width: 18px; height: 3px; }
-    .dmk-carousel-indicators button.active { width: 32px; }
+    /* Slide indicators tepat di atas batas bawah foto */
+    .carousel-indicators.dmk-carousel-indicators {
+        position: absolute !important;
+        top: calc(clamp(210px, 58vw, 275px) - 20px) !important;
+        bottom: auto !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 20 !important;
+        margin: 0 !important;
+        gap: 6px !important;
+    }
+    .dmk-carousel-indicators button {
+        width: 18px !important;
+        height: 4px !important;
+    }
+    .dmk-carousel-indicators button.active {
+        width: 32px !important;
+    }
 
     /* ====================================================
        4. TRUST BAR (2-column bento grid on mobile)

@@ -2443,12 +2443,19 @@ html {
     .dmk-slider-btn,
     .dmk-slider-btn-prev,
     .dmk-slider-btn-next,
+    .dmk-slider-btn-light,
     .dmk-portfolio-section .dmk-slider-btn,
     .dmk-portfolio-section .dmk-slider-btn-prev,
     .dmk-portfolio-section .dmk-slider-btn-next,
+    .dmk-promo-section .dmk-slider-btn,
+    .dmk-promo-section .dmk-slider-btn-prev,
+    .dmk-promo-section .dmk-slider-btn-next,
     .dmk-slider-btn:hover,
     .dmk-slider-btn:focus,
     .dmk-slider-btn:active,
+    .dmk-slider-btn-light:hover,
+    .dmk-slider-btn-light:focus,
+    .dmk-slider-btn-light:active,
     .dmk-slider-btn-prev:hover,
     .dmk-slider-btn-prev:focus,
     .dmk-slider-btn-prev:active,
@@ -2463,7 +2470,16 @@ html {
     .dmk-portfolio-section .dmk-slider-btn-prev:active,
     .dmk-portfolio-section .dmk-slider-btn-next:hover,
     .dmk-portfolio-section .dmk-slider-btn-next:focus,
-    .dmk-portfolio-section .dmk-slider-btn-next:active {
+    .dmk-portfolio-section .dmk-slider-btn-next:active,
+    .dmk-promo-section .dmk-slider-btn:hover,
+    .dmk-promo-section .dmk-slider-btn:focus,
+    .dmk-promo-section .dmk-slider-btn:active,
+    .dmk-promo-section .dmk-slider-btn-prev:hover,
+    .dmk-promo-section .dmk-slider-btn-prev:focus,
+    .dmk-promo-section .dmk-slider-btn-prev:active,
+    .dmk-promo-section .dmk-slider-btn-next:hover,
+    .dmk-promo-section .dmk-slider-btn-next:focus,
+    .dmk-promo-section .dmk-slider-btn-next:active {
         position: absolute !important;
         top: auto !important;
         bottom: 0px !important;
@@ -2509,7 +2525,11 @@ html {
     .dmk-portfolio-section .dmk-slider-btn-prev,
     .dmk-portfolio-section .dmk-slider-btn-prev:hover,
     .dmk-portfolio-section .dmk-slider-btn-prev:focus,
-    .dmk-portfolio-section .dmk-slider-btn-prev:active {
+    .dmk-portfolio-section .dmk-slider-btn-prev:active,
+    .dmk-promo-section .dmk-slider-btn-prev,
+    .dmk-promo-section .dmk-slider-btn-prev:hover,
+    .dmk-promo-section .dmk-slider-btn-prev:focus,
+    .dmk-promo-section .dmk-slider-btn-prev:active {
         left: calc(50% - 38px) !important;
         right: auto !important;
     }
@@ -2521,7 +2541,11 @@ html {
     .dmk-portfolio-section .dmk-slider-btn-next,
     .dmk-portfolio-section .dmk-slider-btn-next:hover,
     .dmk-portfolio-section .dmk-slider-btn-next:focus,
-    .dmk-portfolio-section .dmk-slider-btn-next:active {
+    .dmk-portfolio-section .dmk-slider-btn-next:active,
+    .dmk-promo-section .dmk-slider-btn-next,
+    .dmk-promo-section .dmk-slider-btn-next:hover,
+    .dmk-promo-section .dmk-slider-btn-next:focus,
+    .dmk-promo-section .dmk-slider-btn-next:active {
         right: calc(50% - 38px) !important;
         left: auto !important;
     }
@@ -2529,7 +2553,9 @@ html {
     /* Animasi saat ditekan / diklik: naik sedikit (5px) lalu membal balik ke bawah */
     .dmk-btn-bounce,
     .dmk-slider-btn:active,
-    .dmk-portfolio-section .dmk-slider-btn:active {
+    .dmk-slider-btn-light:active,
+    .dmk-portfolio-section .dmk-slider-btn:active,
+    .dmk-promo-section .dmk-slider-btn:active {
         animation: dmkBtnBounce 0.32s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
     }
 

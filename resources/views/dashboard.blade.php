@@ -89,7 +89,7 @@
                     <ul class="flex flex-col divide-y divide-[#1E3A64]/60">
                         @forelse ($latestPortfolios as $item)
                             <li class="py-2.5 sm:py-3 flex items-center gap-2.5 sm:gap-3.5 hover:bg-[#0F2038]/50 px-2 rounded-lg sm:rounded-xl transition">
-                                <img src='{{ asset("storage/$item->image_path") }}' class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg border border-[#1E3A64] object-cover shrink-0" alt="{{ $item->title }}">
+                                <img src='{{ $item->image_url }}' class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg border border-[#1E3A64] object-cover shrink-0" alt="{{ $item->title }}">
                                 <div class="min-w-0 flex-1">
                                     <p class="text-xs sm:text-sm font-bold text-white truncate">{{ $item->title }}</p>
                                     <p class="text-[11px] sm:text-xs text-[#8DA8CA] truncate mt-0.5">{{ \Illuminate\Support\Str::limit($item->description, 60) }}</p>
@@ -112,7 +112,7 @@
                     <ul class="flex flex-col divide-y divide-[#1E3A64]/60">
                         @forelse ($latestInformation as $item)
                             <li class="py-2.5 sm:py-3 flex items-center gap-2.5 sm:gap-3.5 hover:bg-[#0F2038]/50 px-2 rounded-lg sm:rounded-xl transition">
-                                <img src='{{ asset("storage/$item->image_path") }}' class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg border border-[#1E3A64] object-cover shrink-0" alt="{{ $item->title }}">
+                                <img src='{{ $item->image_url }}' class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg border border-[#1E3A64] object-cover shrink-0" alt="{{ $item->title }}">
                                 <div class="min-w-0 flex-1">
                                     <p class="text-xs sm:text-sm font-bold text-white truncate">{{ $item->title }}</p>
                                     <p class="text-[11px] sm:text-xs text-[#8DA8CA] truncate mt-0.5">{{ \Illuminate\Support\Str::limit($item->description, 60) ?: '-' }}</p>

@@ -25,7 +25,7 @@
                         <div class="bg-[#0F2038] border border-[#1E3A64] hover:border-[#C09A3E] rounded-xl p-2.5 flex flex-col justify-between transition-all duration-200 shadow-md">
                             <div>
                                 <div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden border border-[#1E3A64] mb-2 bg-[#050B14]">
-                                    <img src='{{ asset("storage/$portfolio->image_path") }}'
+                                    <img src='{{ $portfolio->image_url }}'
                                          class="w-full h-full object-cover" alt="{{ $portfolio->title }}">
                                 </div>
                                 <h4 class="font-bold text-white text-xs line-clamp-2 leading-snug mb-1 font-['Barlow_Condensed'] tracking-wide">
@@ -70,7 +70,7 @@
                             @forelse ($portfolios as $portfolio)
                                 <tr class="bg-[#0A1628] hover:bg-[#0F2038]/50 transition">
                                     <td class="p-4">
-                                        <img src='{{ asset("storage/$portfolio->image_path") }}'
+                                        <img src='{{ $portfolio->image_url }}'
                                             class="w-16 md:w-28 h-16 md:h-20 object-cover rounded-lg border border-[#1E3A64]" alt="Portfolio Image">
                                     </td>
                                     <td class="px-6 py-4 font-bold text-white">
@@ -139,7 +139,7 @@
 
                                     <div>
                                         <x-input-label for="image-{{ $portfolio->id }}" value="File Gambar" />
-                                        <img src="{{ asset("storage/$portfolio->image_path") }}"
+                                        <img src="{{ $portfolio->image_url }}"
                                             class="mb-2 rounded-lg border border-[#1E3A64]" style="max-width: 180px; max-height: 120px; object-fit: cover;" alt="Current Image">
                                         <x-text-input id="image-{{ $portfolio->id }}" name="image" type="file"
                                             accept="image/jpeg,image/jpg,image/png,image/gif,image/webp"

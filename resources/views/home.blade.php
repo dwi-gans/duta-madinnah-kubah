@@ -68,9 +68,9 @@
                     <div class="bg-white p-6 rounded-lg shadow text-center flex flex-col max-h-96">
                         <h4 class="text-xl font-bold">{{ $info->title }}</h4>
                         <x-modal :name="$info->id">
-                            <img src="{{ asset("storage/$info->image_path") }}" class="w-full block">
+                            <img src="{{ $info->image_url }}" class="w-full block">
                         </x-modal>
-                        <img src="{{ asset("storage/$info->image_path") }}" class="max-h-3/4 object-cover my-auto"
+                        <img src="{{ $info->image_url }}" class="max-h-3/4 object-cover my-auto"
                             x-data x-on:click="$dispatch('open-modal', '{{ $info->id }}')">
                     </div>
                 @endforeach

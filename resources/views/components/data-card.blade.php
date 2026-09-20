@@ -1,7 +1,7 @@
 @props(['model'])
 
 @php
-    $imageUrl = asset("storage/{$model->image_path}");
+    $imageUrl = $model->image_url;
     $title    = $model->title;
     $desc     = $model?->description ?? '';
 @endphp

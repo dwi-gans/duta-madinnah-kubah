@@ -9,23 +9,35 @@
     <!-- Inisialisasi Carousel Tombol Navigasi -->
     <script>
         $(document).ready(function () {
-            $('#promo-prev').click(function () {
+            $('#promo-prev').on('click', function (e) {
+                e.preventDefault();
                 $('.promo-carousel').trigger('prev.owl.carousel');
+                $(this).blur();
             });
-            $('#promo-next').click(function () {
+            $('#promo-next').on('click', function (e) {
+                e.preventDefault();
                 $('.promo-carousel').trigger('next.owl.carousel');
+                $(this).blur();
             });
-            $('#porto-prev').click(function () {
+            $('#porto-prev').on('click', function (e) {
+                e.preventDefault();
                 $('.portfolio-carousel').trigger('prev.owl.carousel');
+                $(this).blur();
             });
-            $('#porto-next').click(function () {
+            $('#porto-next').on('click', function (e) {
+                e.preventDefault();
                 $('.portfolio-carousel').trigger('next.owl.carousel');
+                $(this).blur();
             });
-            $('#dome-prev').click(function () {
+            $('#dome-prev').on('click', function (e) {
+                e.preventDefault();
                 $('.dome-carousel').trigger('prev.owl.carousel');
+                $(this).blur();
             });
-            $('#dome-next').click(function () {
+            $('#dome-next').on('click', function (e) {
+                e.preventDefault();
                 $('.dome-carousel').trigger('next.owl.carousel');
+                $(this).blur();
             });
 
             // Sinkronisasi indikator hero carousel saat slide berpindah
@@ -39,15 +51,6 @@
                 if ($('.navbar-toggler').is(':visible')) {
                     $('#navbarCollapse').collapse('hide');
                 }
-            });
-
-            // Hilangkan status focus/hover pada tombol navigasi slider setelah disentuh/diklik (agar tidak tetap kuning di mobile)
-            $('.dmk-slider-btn, .carousel-control-prev, .carousel-control-next, .dmk-hero-arrow').on('touchend mouseup pointerup click', function () {
-                var self = this;
-                setTimeout(function () {
-                    $(self).blur();
-                    $(self).find('.dmk-hero-arrow').blur();
-                }, 50);
             });
         });
     </script>

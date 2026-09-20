@@ -31,6 +31,15 @@ class PortfolioController extends Controller
             'image.max'            => 'Ukuran gambar maksimal 5MB!',
         ]);
 
+        // Prevent duplicate rapid submissions (e.g. user multi-clicked while uploading)
+        $recentDuplicate = Portfolio::where('title', $validated['title'])
+            ->where('created_at', '>=', now()->subSeconds(20))
+            ->first();
+
+        if ($recentDuplicate) {
+            return back()->with('success', 'Portofolio berhasil ditambahkan!');
+        }
+
         $imageUrl = $storage->upload($request->file('image'));
 
         Portfolio::create([

@@ -173,7 +173,7 @@
         dots: true,
         loop: true,
         center: false,
-        margin: 30,
+        margin: 24,
         autoplayHoverPause: false,
         responsive: {
             0: {
@@ -190,12 +190,12 @@
             768: {
                 items: 2,
                 center: false,
-                margin: 24,
+                margin: 20,
             },
             992: {
                 items: 3,
                 center: true,
-                margin: 30,
+                margin: 24,
             },
         },
     });

@@ -1062,6 +1062,12 @@ html {
     display: flex !important;
     flex-direction: column;
 }
+/* Override style.css margin: 0 15px on data-card-item — too much gap */
+.promo-carousel .owl-item .data-card-item,
+.portfolio-carousel .owl-item .data-card-item,
+.dome-carousel .owl-item .data-card-item {
+    margin: 0 !important;
+}
 .dmk-promo-card {
     background: var(--dmk-carbon);
     border: 1px solid var(--dmk-steel);
@@ -2430,34 +2436,51 @@ html {
     .dmk-carousel-wrapper {
         position: relative;
         padding: 0 !important;
-        padding-bottom: 40px !important;
+        padding-bottom: 42px !important;
     }
 
-    /* Move slider arrows to bottom-center on mobile */
+    /* Move slider arrows to bottom-center on mobile & lock them so they NEVER jump to top on click/focus/active */
     .dmk-slider-btn,
     .dmk-slider-btn-prev,
-    .dmk-slider-btn-next {
+    .dmk-slider-btn-next,
+    .dmk-slider-btn:hover,
+    .dmk-slider-btn:focus,
+    .dmk-slider-btn:active,
+    .dmk-slider-btn-prev:hover,
+    .dmk-slider-btn-prev:focus,
+    .dmk-slider-btn-prev:active,
+    .dmk-slider-btn-next:hover,
+    .dmk-slider-btn-next:focus,
+    .dmk-slider-btn-next:active {
         position: absolute !important;
         top: auto !important;
-        bottom: -2px !important;
+        bottom: 0px !important;
         transform: none !important;
         width: 32px !important;
         height: 32px !important;
         font-size: 11px !important;
         z-index: 25 !important;
-        background: rgba(10, 22, 40, 0.85) !important;
+        background: rgba(10, 22, 40, 0.9) !important;
         border: 1px solid var(--dmk-brass) !important;
         color: #FFFFFF !important;
         border-radius: 50% !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
+        outline: none !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5) !important;
     }
-    .dmk-slider-btn-prev {
+    .dmk-slider-btn-prev,
+    .dmk-slider-btn-prev:hover,
+    .dmk-slider-btn-prev:focus,
+    .dmk-slider-btn-prev:active {
         left: calc(50% - 38px) !important;
         right: auto !important;
     }
-    .dmk-slider-btn-next {
+    .dmk-slider-btn-next,
+    .dmk-slider-btn-next:hover,
+    .dmk-slider-btn-next:focus,
+    .dmk-slider-btn-next:active {
         right: calc(50% - 38px) !important;
         left: auto !important;
     }
@@ -2476,13 +2499,27 @@ html {
         padding: 0 !important;
     }
 
-    /* Cards di Mobile: 3 Kolom, Compact & Proportional */
+    /* Cards di Mobile: 3 Kolom, Strictly Equal Height & Proportional */
+    .dmk-carousel-wrapper .owl-stage {
+        display: flex !important;
+    }
+    .dmk-carousel-wrapper .owl-item {
+        display: flex !important;
+        height: auto !important;
+    }
+    .dmk-carousel-wrapper .owl-item .data-card-item {
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
     .dmk-promo-card {
         border-radius: 8px !important;
         overflow: hidden !important;
-        height: auto !important;
-        min-height: 0 !important;
-        max-height: none !important;
+        height: 100% !important;
+        min-height: 100% !important;
         display: flex !important;
         flex-direction: column !important;
         width: 100% !important;
@@ -2516,24 +2553,23 @@ html {
     }
     .dmk-promo-body {
         height: auto !important;
-        min-height: 0 !important;
-        max-height: none !important;
+        min-height: 86px !important;
         padding: 6px 6px 8px !important;
-        flex: 1 !important;
+        flex: 1 1 auto !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: flex-start !important;
         box-sizing: border-box !important;
-        overflow: visible !important;
+        overflow: hidden !important;
     }
     .dmk-promo-title {
         font-family: var(--dmk-font-heading);
         font-size: 0.6rem !important;
         font-weight: 700 !important;
-        line-height: 1.2 !important;
-        height: auto !important;
-        min-height: 0 !important;
-        max-height: none !important;
+        line-height: 1.25 !important;
+        height: 2.5em !important;
+        min-height: 2.5em !important;
+        max-height: 2.5em !important;
         margin-bottom: 3px !important;
         display: -webkit-box !important;
         -webkit-line-clamp: 2 !important;
@@ -2544,9 +2580,9 @@ html {
     .dmk-promo-desc {
         font-size: 0.52rem !important;
         line-height: 1.35 !important;
-        height: auto !important;
-        min-height: 0 !important;
-        max-height: none !important;
+        height: 4.05em !important;
+        min-height: 4.05em !important;
+        max-height: 4.05em !important;
         color: var(--dmk-ash) !important;
         margin-bottom: 0 !important;
         overflow: hidden !important;

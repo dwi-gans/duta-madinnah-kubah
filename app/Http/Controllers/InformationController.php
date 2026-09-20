@@ -30,6 +30,15 @@ class InformationController extends Controller
             'image.max'      => 'Ukuran gambar maksimal 5MB!',
         ]);
 
+        // Prevent duplicate rapid submissions (e.g. user multi-clicked while uploading)
+        $recentDuplicate = Information::where('title', $validated['title'])
+            ->where('created_at', '>=', now()->subSeconds(20))
+            ->first();
+
+        if ($recentDuplicate) {
+            return back()->with('success', 'Informasi berhasil ditambahkan!');
+        }
+
         $imageUrl = $storage->upload($request->file('image'));
 
         Information::create([

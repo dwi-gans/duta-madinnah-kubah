@@ -109,7 +109,9 @@
                     <!-- Modal Edit -->
                     <x-modal name="edit-data-{{ $info->id }}">
                         <form action="{{ route('information.update', $info) }}" method="POST"
-                            enctype="multipart/form-data" class="block w-full">
+                            enctype="multipart/form-data" class="block w-full"
+                            x-data="{ isSubmitting: false }"
+                            x-on:submit="if (isSubmitting) { $event.preventDefault(); return false; } isSubmitting = true;">
                             @csrf
                             @method('PUT')
 
@@ -153,9 +155,16 @@
                             </div>
 
                             <div class="bg-[#050B14] px-5 py-4 flex flex-col sm:flex sm:flex-row-reverse sm:px-6 gap-3">
-                                <x-primary-button class="justify-center">Simpan Perubahan</x-primary-button>
+                                <button type="submit"
+                                    class="inline-flex items-center justify-center px-5 py-2.5 bg-[#D9B35A] hover:bg-[#E5C370] text-[#050B14] font-extrabold text-xs uppercase tracking-wider rounded-xl transition cursor-pointer shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                                    :disabled="isSubmitting">
+                                    <span x-show="!isSubmitting">Simpan Perubahan</span>
+                                    <span x-show="isSubmitting" class="inline-flex items-center gap-2" style="display: none;">
+                                        <i class="fa-solid fa-spinner fa-spin"></i> Menyimpan...
+                                    </span>
+                                </button>
                                 <x-light-button type="button" class="justify-center"
-                                    x-on:click="$dispatch('close')">Batal</x-light-button>
+                                    x-on:click="$dispatch('close')" ::disabled="isSubmitting">Batal</x-light-button>
                             </div>
                         </form>
                     </x-modal>
@@ -192,7 +201,9 @@
     <!-- Modal Tambah -->
     <x-modal name="add-data">
         <form action="{{ route('information.store') }}" method="POST" enctype="multipart/form-data"
-            class="block w-full">
+            class="block w-full"
+            x-data="{ isSubmitting: false }"
+            x-on:submit="if (isSubmitting) { $event.preventDefault(); return false; } isSubmitting = true;">
             @csrf
             @method('POST')
 
@@ -233,9 +244,16 @@
             </div>
 
             <div class="bg-[#050B14] px-5 py-4 flex flex-col sm:flex sm:flex-row-reverse sm:px-6 gap-3">
-                <x-primary-button class="justify-center">Simpan Data</x-primary-button>
+                <button type="submit"
+                    class="inline-flex items-center justify-center px-5 py-2.5 bg-[#D9B35A] hover:bg-[#E5C370] text-[#050B14] font-extrabold text-xs uppercase tracking-wider rounded-xl transition cursor-pointer shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                    :disabled="isSubmitting">
+                    <span x-show="!isSubmitting">Simpan Data</span>
+                    <span x-show="isSubmitting" class="inline-flex items-center gap-2" style="display: none;">
+                        <i class="fa-solid fa-spinner fa-spin"></i> Mengunggah & Menyimpan...
+                    </span>
+                </button>
                 <x-light-button type="button" class="justify-center"
-                    x-on:click="$dispatch('close')">Batal</x-light-button>
+                    x-on:click="$dispatch('close')" ::disabled="isSubmitting">Batal</x-light-button>
             </div>
         </form>
     </x-modal>

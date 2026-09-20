@@ -1,0 +1,49 @@
+{
+    "users": [
+        {
+            "name": "Admin",
+            "email": "admin@example.com",
+            "password": "$2y$12$e0b3cK8m6j7u5Z8s/8iIxePzZ8W5z6s8w9x0y1z2a3b4c5d6e7f8g"
+        }
+    ],
+    "portfolios": [
+        {
+            "id": 3,
+            "title": "✨ Keindahan Masjid dengan Kubah Emas ✨",
+            "image_path": "images/sk4L6UWeIVksfU2krnhtKd0CIJDXQjegrAmYNe8M.jpg",
+            "description": "Menghadirkan sentuhan keindahan dan kemegahan melalui kubah masjid dengan desain elegan. Setiap detail dikerjakan dengan memperhatikan kualitas dan kerapian untuk menghasilkan kubah yang menjadi identitas dan kebanggaan masjid.\r\n\r\nDuta Madinna Kubah — Kontraktor Kubah Masjid."
+        },
+        {
+            "id": 4,
+            "title": "💚💛 Kubah dengan Motif yang Berkarakter",
+            "image_path": "images/XSmP2IA9MLmJfbGsPnXuNN2JXSTZoiPJC90E6Cx8.jpg",
+            "description": "Perpaduan warna hijau dan kuning pada kubah memberikan kesan unik, segar, dan penuh karakter. Dikerjakan dengan detail untuk menciptakan tampilan kubah yang menarik dari berbagai sudut.\r\n\r\nPercayakan kebutuhan kubah masjid kepada Duta Madinna Kubah."
+        },
+        {
+            "id": 5,
+            "title": "🕌 Dari Proses hingga Menjadi Kemegahan",
+            "image_path": "images/yaglXuOryjd7h6LBwDPh0kodK1w8JwjG8qiRtntq.jpg",
+            "description": "Setiap kubah memiliki proses dan cerita di balik pembuatannya. Mulai dari pemasangan rangka hingga penyusunan motif dan warna, seluruhnya dikerjakan dengan ketelitian untuk menghasilkan kubah yang indah dan berkualitas.\r\n\r\nDuta Madinna Kubah Mewujudkan kubah masjid sesuai karakter dan kebutuhan Anda."
+        }
+    ],
+    "information": [
+        {
+            "id": 2,
+            "title": "🌙 Marhaban Yā Ramadhān 1447 H 🤍",
+            "description": "Bulan suci telah tiba. Saatnya membuka hati, menenangkan jiwa, memperbanyak ibadah, dan memperbaiki diri. ✨\r\n\r\nSemoga Ramadhan tahun ini membawa keberkahan, kedamaian, serta menjadi momentum bagi kita untuk menjadi pribadi yang lebih baik dan lebih dekat kepada Allah SWT.\r\n\r\nSelamat menunaikan ibadah puasa Ramadhan 1447 H.\r\nMohon maaf lahir dan batin. 🙏🏻\r\n\r\nDuta Madinna Kubah 🕌",
+            "image_path": "images/3X1jcgT0uzHlHcnZ7D4jTotj6RLtFIUI5Q6nlMk0.jpg"
+        },
+        {
+            "id": 3,
+            "title": "🕌 Membangun Masjid, Membangun Peradaban",
+            "description": "Masjid bukan hanya tempat untuk beribadah, tetapi juga menjadi pusat pendidikan, pembinaan masyarakat, persatuan, dan pemberdayaan umat. 🤍\r\n\r\nMari bersama membangun masjid yang tidak hanya megah secara fisik, tetapi juga hidup dengan ilmu, amal, dan kegiatan yang membawa manfaat bagi masyarakat.\r\n\r\n✨ Bangun masjid, hidupkan peradaban.\r\nSemoga setiap langkah dalam membangun dan memakmurkan masjid menjadi amal jariyah yang terus mengalir.",
+            "image_path": "images/A9i57f2IITDI3OXDo9ZVKWp18WBuLOPCqOKA0t4W.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Alhamdulillah, Reward Umroh Gratis untuk Keluarga DMK",
+            "description": "Alhamdulillah, pada Desember 2025 kemarin, PT Duta Madinna Komarudin (DMK) berkesempatan memberangkatkan 2 keluarga DMK untuk melaksanakan ibadah Umroh. 🕋\r\n\r\nSebuah bentuk apresiasi dan rasa syukur atas dedikasi, kerja keras, serta kebersamaan seluruh keluarga besar DMK.\r\n\r\nSemoga perjalanan ibadah ini menjadi Umroh yang mabrur, diberikan kelancaran, kesehatan, dan menjadi pengalaman yang penuh keberkahan. Aamiin Ya Rabbal ‘Alamin. 🤲",
+            "image_path": "images/LeG8ppPObjmLgX7HkIizQIPwPLvOtcr4H9GYo1Im.jpg"
+        }
+    ]
+}

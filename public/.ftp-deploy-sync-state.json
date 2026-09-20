@@ -1,0 +1,57 @@
+{
+    "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
+    "version": "1.0.0",
+    "generatedTime": 1746990612478,
+    "data": [
+        {
+            "type": "file",
+            "name": ".htaccess",
+            "size": 740,
+            "hash": "b7e379c77639fd56144947dbae84c84eb466d9c686ea81f2f013ae85421da923"
+        },
+        {
+            "type": "folder",
+            "name": "build"
+        },
+        {
+            "type": "file",
+            "name": "favicon.ico",
+            "size": 0,
+            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "type": "file",
+            "name": "index.php",
+            "size": 543,
+            "hash": "eba77cba39695b6bd091fe5211d481f7ebb2ce2d8d26230b5a609465d0a4aff9"
+        },
+        {
+            "type": "file",
+            "name": "robots.txt",
+            "size": 24,
+            "hash": "e5c4b84484ee4216e9373be99380320c25dd94805f99f0a805846f087636553f"
+        },
+        {
+            "type": "folder",
+            "name": "build/assets"
+        },
+        {
+            "type": "file",
+            "name": "build/manifest.json",
+            "size": 274,
+            "hash": "e83811ba397d55987e39e09dfc3bcc6d0007b822f64c272983d528e6670b53ff"
+        },
+        {
+            "type": "file",
+            "name": "build/assets/app-BWRz1u9-.css",
+            "size": 32277,
+            "hash": "e023880bc2882b00ceadfed5e44a257f8d87a00b588da6ff1472c281af4d2d3f"
+        },
+        {
+            "type": "file",
+            "name": "build/assets/app-T1DpEqax.js",
+            "size": 35279,
+            "hash": "eaf04d74ea952577a02beba299e12312701ae0a6b384ab2c6a2556f839a35e9e"
+        }
+    ]
+}

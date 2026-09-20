@@ -1986,53 +1986,55 @@ html {
     }
 
     /* ====================================================
-       3. HERO (Showcase Uncropped Layout on Mobile)
-       Foto tampil proporsional tanpa crop ekstrem,
-       teks & CTA tersusun rapi di bawahnya.
+       3. HERO (Original Fullscreen Overlay Layout on Mobile)
+       Layout asli: background foto penuh + gradien sinematik + teks di atasnya
        ==================================================== */
-    .dmk-hero-section {
-        background: var(--dmk-carbon);
-    }
-
-    .dmk-hero-section .carousel-inner {
-        overflow: hidden;
-    }
-
     .dmk-hero-section .carousel-item {
-        min-height: auto !important;
-        height: auto !important;
+        min-height: 480px !important;
+        height: clamp(460px, 72vh, 540px) !important;
         position: relative !important;
-        background: var(--dmk-carbon);
     }
-
-    /* Foto Hero di Mobile: Proporsional (~16:9), jernih, tanpa crop ekstrem */
     .dmk-hero-img {
-        position: relative !important;
-        inset: auto !important;
+        position: absolute !important;
+        inset: 0 !important;
+        min-height: 100% !important;
+        height: 100% !important;
         width: 100% !important;
-        height: clamp(210px, 58vw, 275px) !important;
-        min-height: clamp(210px, 58vw, 275px) !important;
-        max-height: 275px !important;
         object-fit: cover !important;
-        object-position: center !important;
-        filter: brightness(0.95) contrast(1.05) !important;
-        display: block !important;
+        object-position: center 25% !important;
+        filter: brightness(0.74) contrast(1.08) !important;
     }
 
-    /* Sembunyikan overlay gelap di atas foto agar gambar tampil jernih & cerah */
-    .dmk-hero-overlay,
+    /* Vertical Gradient Overlay: atas jernih (kubah terlihat), bawah gelap (teks terbaca) */
+    .dmk-hero-overlay {
+        display: block !important;
+        position: absolute !important;
+        inset: 0 !important;
+        background: linear-gradient(180deg,
+            rgba(5, 11, 20, 0.12) 0%,
+            rgba(5, 11, 20, 0.35) 30%,
+            rgba(5, 11, 20, 0.82) 65%,
+            rgba(5, 11, 20, 0.98) 100%
+        ) !important;
+        z-index: 2 !important;
+    }
     .dmk-hero-geo-overlay {
         display: none !important;
     }
 
-    /* Area Konten Teks: diletakkan di bawah foto dengan background navy mewah */
+    /* Content wrap di bagian bawah, dengan padding samping agar tidak menabrak tombol panah */
     .dmk-hero-content-wrap {
-        position: relative !important;
-        inset: auto !important;
-        background: linear-gradient(180deg, #0b1522 0%, #060c14 100%) !important;
-        padding: 20px 16px 28px 16px !important;
-        display: block !important;
-        border-top: 1px solid rgba(218, 165, 32, 0.25) !important;
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 5 !important;
+        display: flex !important;
+        align-items: flex-end !important;
+        padding-top: 60px !important;
+        padding-bottom: 36px !important;
+        padding-left: 36px !important;
+        padding-right: 36px !important;
+        background: transparent !important;
+        border-top: none !important;
     }
 
     .dmk-hero-content-wrap .container {
@@ -2051,57 +2053,60 @@ html {
 
     /* Headline: tegas, tidak terpotong, tidak tertabrak tombol panah */
     .dmk-hero-headline {
-        font-size: clamp(1.25rem, 5.2vw, 1.55rem) !important;
-        line-height: 1.25 !important;
-        margin-bottom: 0.65rem !important;
+        font-size: clamp(1.2rem, 5vw, 1.55rem) !important;
+        line-height: 1.16 !important;
+        margin-bottom: 0.5rem !important;
         color: #FFFFFF !important;
-        text-shadow: none !important;
-        min-height: 2.5em;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.8) !important;
+        word-break: break-word;
     }
 
     /* Subtitle */
     .dmk-hero-sub {
-        font-size: 0.82rem !important;
-        line-height: 1.55 !important;
-        margin-bottom: 1.25rem !important;
-        color: rgba(255, 255, 255, 0.85) !important;
-        min-height: 4.6em;
+        font-size: 0.8rem !important;
+        line-height: 1.45 !important;
+        margin-bottom: 1rem !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        max-width: 100%;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 3 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
     }
 
     /* CTA buttons */
     .dmk-hero-actions {
         display: flex !important;
         flex-direction: column !important;
-        gap: 10px !important;
+        gap: 8px !important;
     }
 
     .dmk-btn-primary,
     .dmk-btn-outline-light {
         width: 100% !important;
-        padding: 12px 14px !important;
-        font-size: 0.86rem !important;
+        padding: 10px 14px !important;
+        font-size: 0.84rem !important;
         justify-content: center !important;
         border-radius: var(--dmk-radius-sm) !important;
     }
 
-    /* Tombol Navigasi Panah Carousel di Mobile: Mengambang elegan di atas foto */
+    /* Tombol Navigasi Panah Carousel di Mobile */
     .carousel-control-prev,
     .carousel-control-next {
         position: absolute !important;
-        top: clamp(105px, 29vw, 137px) !important;
-        bottom: auto !important;
+        top: 50% !important;
         transform: translateY(-50%) !important;
-        width: 38px !important;
-        height: 38px !important;
-        z-index: 20 !important;
-        opacity: 0.95 !important;
+        width: 32px !important;
+        height: 32px !important;
+        z-index: 10 !important;
+        opacity: 0.9 !important;
     }
     .carousel-control-prev {
-        left: 8px !important;
+        left: 2px !important;
         right: auto !important;
     }
     .carousel-control-next {
-        right: 8px !important;
+        right: 2px !important;
         left: auto !important;
     }
 
@@ -2118,31 +2123,29 @@ html {
     .dmk-hero-arrow:hover,
     .dmk-hero-arrow:focus,
     .dmk-hero-arrow:active {
-        width: 32px !important;
-        height: 32px !important;
+        width: 30px !important;
+        height: 30px !important;
         font-size: 11px !important;
         background: rgba(10, 22, 40, 0.85) !important;
         color: #FFFFFF !important;
         border: 1px solid var(--dmk-steel) !important;
         outline: none !important;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
-        backdrop-filter: blur(4px) !important;
     }
 
-    /* Slide indicators tepat di atas batas bawah foto */
-    .carousel-indicators.dmk-carousel-indicators {
+    /* Slide indicators */
+    .dmk-carousel-indicators {
         position: absolute !important;
-        top: calc(clamp(210px, 58vw, 275px) - 20px) !important;
-        bottom: auto !important;
+        bottom: 8px !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
-        z-index: 20 !important;
+        z-index: 10 !important;
         margin: 0 !important;
         gap: 6px !important;
     }
     .dmk-carousel-indicators button {
         width: 18px !important;
-        height: 4px !important;
+        height: 3px !important;
     }
     .dmk-carousel-indicators button.active {
         width: 32px !important;
@@ -2427,11 +2430,11 @@ html {
     }
 
     /* ====================================================
-       10. CAROUSELS (1 item per view on mobile — Sesuai Tampilan DevTools)
+       10. CAROUSELS (3 items per view on mobile — Kompak & Proporsional)
        ==================================================== */
     .dmk-carousel-wrapper {
         position: relative;
-        padding: 0 8px;
+        padding: 0;
     }
     .dmk-slider-btn-prev,
     .dmk-slider-btn-next,
@@ -2441,9 +2444,9 @@ html {
     .dmk-slider-btn-next:focus,
     .dmk-slider-btn-prev:active,
     .dmk-slider-btn-next:active {
-        width: 36px !important;
-        height: 36px !important;
-        font-size: 12px !important;
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 10px !important;
         background: rgba(10, 22, 40, 0.9) !important;
         border: 1px solid var(--dmk-brass) !important;
         color: #FFFFFF !important;
@@ -2456,65 +2459,67 @@ html {
         outline: none !important;
     }
     .dmk-slider-btn-prev {
-        left: -6px !important;
+        left: -4px !important;
     }
     .dmk-slider-btn-next {
-        right: -6px !important;
+        right: -4px !important;
     }
 
-    /* Cards 1-per-view on mobile - Premium, Lapang, & Terbaca Jelas */
+    /* Cards 3-per-view on mobile - 100% Proportional (Bukan Panjang Melar) */
     .dmk-promo-card {
-        border-radius: var(--dmk-radius-md) !important;
+        border-radius: var(--dmk-radius-xs) !important;
         overflow: hidden !important;
-        height: auto !important;
-        min-height: 370px !important;
+        height: 170px !important;
+        min-height: 170px !important;
+        max-height: 170px !important;
         display: flex !important;
         flex-direction: column !important;
         width: 100% !important;
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35) !important;
     }
     .promo-carousel .dmk-promo-img-wrap,
     .portfolio-carousel .dmk-promo-img-wrap {
-        height: 215px !important;
-        min-height: 215px !important;
-        max-height: 215px !important;
-        border-top-left-radius: var(--dmk-radius-md) !important;
-        border-top-right-radius: var(--dmk-radius-md) !important;
+        height: 105px !important;
+        min-height: 105px !important;
+        max-height: 105px !important;
+        border-top-left-radius: var(--dmk-radius-xs) !important;
+        border-top-right-radius: var(--dmk-radius-xs) !important;
         padding: 0 !important;
         flex-shrink: 0 !important;
     }
     .dome-carousel .dmk-promo-img-wrap {
-        height: 215px !important;
-        min-height: 215px !important;
-        max-height: 215px !important;
-        border-top-left-radius: var(--dmk-radius-md) !important;
-        border-top-right-radius: var(--dmk-radius-md) !important;
-        padding: 14px !important;
+        height: 105px !important;
+        min-height: 105px !important;
+        max-height: 105px !important;
+        border-top-left-radius: var(--dmk-radius-xs) !important;
+        border-top-right-radius: var(--dmk-radius-xs) !important;
+        padding: 8px !important;
         flex-shrink: 0 !important;
     }
     .dmk-promo-overlay-inner {
-        width: 38px !important;
-        height: 38px !important;
-        font-size: 0.9rem !important;
+        width: 26px !important;
+        height: 26px !important;
+        font-size: 0.7rem !important;
     }
     .dmk-promo-body {
-        height: auto !important;
-        min-height: 155px !important;
-        padding: 18px 16px !important;
+        height: 65px !important;
+        min-height: 65px !important;
+        max-height: 65px !important;
+        padding: 6px 6px !important;
         flex: 1 !important;
         display: flex !important;
         flex-direction: column !important;
-        justify-content: flex-start !important;
+        justify-content: center !important;
         box-sizing: border-box !important;
     }
     .dmk-promo-title {
-        font-size: 1.05rem !important;
+        font-size: 0.70rem !important;
         font-weight: 800 !important;
-        line-height: 1.3 !important;
-        height: auto !important;
-        min-height: 2.6em !important;
-        max-height: 2.6em !important;
-        margin-bottom: 8px !important;
+        line-height: 1.18 !important;
+        height: 2.4em !important;
+        min-height: 2.4em !important;
+        max-height: 2.4em !important;
+        margin-bottom: 0 !important;
         display: -webkit-box !important;
         -webkit-line-clamp: 2 !important;
         -webkit-box-orient: vertical !important;
@@ -2522,17 +2527,7 @@ html {
         text-overflow: ellipsis !important;
     }
     .dmk-promo-desc {
-        display: -webkit-box !important;
-        -webkit-line-clamp: 2 !important;
-        -webkit-box-orient: vertical !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-        font-size: 0.83rem !important;
-        line-height: 1.55 !important;
-        min-height: 3.1em !important;
-        max-height: 3.1em !important;
-        color: var(--dmk-ash) !important;
-        margin-bottom: 0 !important;
+        display: none !important;
     }
     .dmk-promo-card:hover { transform: none !important; }
 

@@ -1074,7 +1074,8 @@ html {
     border-radius: var(--dmk-radius-md);
     overflow: hidden;
     transition: all 0.3s ease;
-    height: 650px !important;
+    height: auto !important;
+    min-height: 440px !important;
     display: flex !important;
     flex-direction: column !important;
     width: 100%;
@@ -1096,9 +1097,9 @@ html {
 
 /* Full Bleed Image Wrap (Rounded Top) */
 .dmk-promo-img-wrap {
-    height: 350px !important;
-    min-height: 350px !important;
-    max-height: 350px !important;
+    height: 270px !important;
+    min-height: 270px !important;
+    max-height: 270px !important;
     width: 100%;
     background: var(--dmk-carbon);
     position: relative;

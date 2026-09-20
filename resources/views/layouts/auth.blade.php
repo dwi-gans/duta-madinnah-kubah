@@ -119,5 +119,8 @@
         <main class="relative z-10 pb-16">
             {{ $slot }}
         </main>
+
+        {{-- Global Image Cropper Modal untuk Upload Card & Banner --}}
+        <x-image-cropper-modal />
     </div>
 </x-app-layout>

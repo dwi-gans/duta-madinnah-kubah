@@ -28,10 +28,10 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}?v={{ file_exists(public_path('css/style.css')) ? filemtime(public_path('css/style.css')) : time() }}" rel="stylesheet">
 
     <!-- DMK Modern & Luxury Navy Stylesheet -->
-    <link href="{{ asset('css/landing-custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/landing-custom.css') }}?v={{ file_exists(public_path('css/landing-custom.css')) ? filemtime(public_path('css/landing-custom.css')) : time() }}" rel="stylesheet">
 </head>
 
 <body>

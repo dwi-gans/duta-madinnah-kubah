@@ -467,7 +467,7 @@ html {
     font-size: 14px;
     transition: all 0.2s ease;
 }
-@media (hover: hover) and (pointer: fine) {
+@media (min-width: 992px) and (hover: hover) and (pointer: fine) {
     .carousel-control-prev:hover .dmk-hero-arrow,
     .carousel-control-next:hover .dmk-hero-arrow {
         background: var(--dmk-brass);
@@ -1068,10 +1068,10 @@ html {
     border-radius: var(--dmk-radius-md);
     overflow: hidden;
     transition: all 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+    height: 425px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100%;
 }
 .dmk-promo-card:hover {
     border-color: var(--dmk-brass);
@@ -1090,7 +1090,9 @@ html {
 
 /* Full Bleed Image Wrap (Rounded Top) */
 .dmk-promo-img-wrap {
-    height: 240px;
+    height: 235px !important;
+    min-height: 235px !important;
+    max-height: 235px !important;
     width: 100%;
     background: var(--dmk-carbon);
     position: relative;
@@ -1098,6 +1100,7 @@ html {
     padding: 0 !important;
     border-top-left-radius: var(--dmk-radius-md);
     border-top-right-radius: var(--dmk-radius-md);
+    flex-shrink: 0 !important;
 }
 .dmk-portfolio-section .dmk-promo-img-wrap {
     background: var(--dmk-carbon);
@@ -1120,7 +1123,9 @@ html {
 
 /* Centered Transparent 3D Dome Showcase */
 .dmk-dome-img-wrap {
-    height: 220px;
+    height: 235px !important;
+    min-height: 235px !important;
+    max-height: 235px !important;
     width: 100%;
     background: var(--dmk-charcoal);
     display: flex;
@@ -1131,6 +1136,7 @@ html {
     overflow: hidden;
     border-top-left-radius: var(--dmk-radius-md);
     border-top-right-radius: var(--dmk-radius-md);
+    flex-shrink: 0 !important;
 }
 .dmk-dome-img {
     width: auto !important;
@@ -1173,12 +1179,15 @@ html {
 }
 
 .dmk-promo-body {
-    padding: 20px 18px;
+    height: 190px !important;
+    min-height: 190px !important;
+    max-height: 190px !important;
+    padding: 18px 16px !important;
     background: var(--dmk-carbon);
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    box-sizing: border-box !important;
 }
 .dmk-portfolio-section .dmk-promo-body {
     background: #FFFFFF;
@@ -1186,32 +1195,37 @@ html {
 
 .dmk-promo-title {
     font-family: var(--dmk-font-heading);
-    font-size: 1.15rem;
-    font-weight: 900;
+    font-size: 1.12rem !important;
+    font-weight: 900 !important;
     color: #FFFFFF;
-    margin-bottom: 8px;
-    line-height: 1.28;
-    min-height: 2.6em;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    margin-bottom: 8px !important;
+    line-height: 1.28 !important;
+    height: 2.6em !important;
+    min-height: 2.6em !important;
+    max-height: 2.6em !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
 }
 .dmk-portfolio-section .dmk-promo-title {
     color: var(--dmk-text-dark);
 }
 
 .dmk-promo-desc {
-    font-size: 0.82rem;
+    font-size: 0.82rem !important;
     color: var(--dmk-ash);
-    line-height: 1.55;
-    margin-bottom: 0;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    min-height: 3.1em;
-    margin-top: auto;
+    line-height: 1.55 !important;
+    margin-bottom: 0 !important;
+    height: 3.1em !important;
+    min-height: 3.1em !important;
+    max-height: 3.1em !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
 }
 .dmk-portfolio-section .dmk-promo-desc {
     color: var(--dmk-text-body);
@@ -1249,7 +1263,7 @@ html {
 .dmk-slider-btn-next {
     right: -22px;
 }
-@media (hover: hover) and (pointer: fine) {
+@media (min-width: 992px) and (hover: hover) and (pointer: fine) {
     .dmk-slider-btn:hover {
         background: var(--dmk-brass);
         color: var(--dmk-carbon);
@@ -1875,6 +1889,47 @@ html {
     .dmk-hero-section .carousel-item,
     .dmk-hero-img { min-height: 75vh; height: 75vh; }
 
+    /* Hero & Slider Controls on Tablet & Touch: strictly non-yellow */
+    .carousel-control-prev .dmk-hero-arrow,
+    .carousel-control-next .dmk-hero-arrow,
+    .carousel-control-prev:hover .dmk-hero-arrow,
+    .carousel-control-next:hover .dmk-hero-arrow,
+    .carousel-control-prev:focus .dmk-hero-arrow,
+    .carousel-control-next:focus .dmk-hero-arrow,
+    .carousel-control-prev:active .dmk-hero-arrow,
+    .carousel-control-next:active .dmk-hero-arrow {
+        background: rgba(10, 22, 40, 0.85) !important;
+        color: #FFFFFF !important;
+        border-color: var(--dmk-steel) !important;
+    }
+
+    .dmk-slider-btn:hover,
+    .dmk-slider-btn:focus,
+    .dmk-slider-btn:active {
+        background: var(--dmk-slate) !important;
+        color: #FFFFFF !important;
+        border-color: var(--dmk-steel) !important;
+        transform: translateY(-50%) !important;
+    }
+
+    .dmk-slider-btn-light:hover,
+    .dmk-slider-btn-light:focus,
+    .dmk-slider-btn-light:active {
+        background: var(--dmk-charcoal) !important;
+        color: #FFFFFF !important;
+        border-color: var(--dmk-steel-light) !important;
+        transform: translateY(-50%) !important;
+    }
+
+    .dmk-portfolio-section .dmk-slider-btn:hover,
+    .dmk-portfolio-section .dmk-slider-btn:focus,
+    .dmk-portfolio-section .dmk-slider-btn:active {
+        background: #FFFFFF !important;
+        color: var(--dmk-text-dark) !important;
+        border-color: var(--dmk-cream-border) !important;
+        transform: translateY(-50%) !important;
+    }
+
     /* Trust bar: 2-per-row wrap */
     .dmk-trust-stat { flex: 1 1 44%; }
     .dmk-trust-sep:nth-child(odd) { display: none; }
@@ -1998,8 +2053,28 @@ html {
         justify-content: center;
     }
 
-    /* Arrow controls */
-    .dmk-hero-arrow { width: 32px; height: 32px; font-size: 11px; }
+    /* Arrow controls on mobile — strictly semi-transparent dark, never turns/stays yellow */
+    .carousel-control-prev .dmk-hero-arrow,
+    .carousel-control-next .dmk-hero-arrow,
+    .carousel-control-prev:hover .dmk-hero-arrow,
+    .carousel-control-next:hover .dmk-hero-arrow,
+    .carousel-control-prev:focus .dmk-hero-arrow,
+    .carousel-control-next:focus .dmk-hero-arrow,
+    .carousel-control-prev:active .dmk-hero-arrow,
+    .carousel-control-next:active .dmk-hero-arrow,
+    .dmk-hero-arrow,
+    .dmk-hero-arrow:hover,
+    .dmk-hero-arrow:focus,
+    .dmk-hero-arrow:active {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 11px !important;
+        background: rgba(10, 22, 40, 0.85) !important;
+        color: #FFFFFF !important;
+        border: 1px solid var(--dmk-steel) !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
 
     /* Slide indicators */
     .dmk-carousel-indicators { bottom: 60px; }
@@ -2292,19 +2367,26 @@ html {
         padding: 0;
     }
     .dmk-slider-btn-prev,
-    .dmk-slider-btn-next {
-        width: 30px;
-        height: 30px;
-        font-size: 11px;
+    .dmk-slider-btn-next,
+    .dmk-slider-btn-prev:hover,
+    .dmk-slider-btn-next:hover,
+    .dmk-slider-btn-prev:focus,
+    .dmk-slider-btn-next:focus,
+    .dmk-slider-btn-prev:active,
+    .dmk-slider-btn-next:active {
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 11px !important;
         background: rgba(10, 22, 40, 0.9) !important;
         border: 1px solid var(--dmk-brass) !important;
         color: #FFFFFF !important;
-        border-radius: var(--dmk-radius-xs);
-        backdrop-filter: blur(6px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-        z-index: 25;
-        top: 50%;
+        border-radius: var(--dmk-radius-xs) !important;
+        backdrop-filter: blur(6px) !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.6) !important;
+        z-index: 25 !important;
+        top: 50% !important;
         transform: translateY(-50%) !important;
+        outline: none !important;
     }
     .dmk-slider-btn-prev {
         left: 2px !important;
@@ -2313,42 +2395,57 @@ html {
         right: 2px !important;
     }
 
-    /* Cards 3-per-view on mobile */
+    /* Cards 3-per-view on mobile - 100% Uniform Height */
     .dmk-promo-card {
         border-radius: var(--dmk-radius-sm) !important;
-        overflow: hidden;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
+        overflow: hidden !important;
+        height: 165px !important;
+        min-height: 165px !important;
+        max-height: 165px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
     }
     .promo-carousel .dmk-promo-img-wrap,
-    .portfolio-carousel .dmk-promo-img-wrap {
+    .portfolio-carousel .dmk-promo-img-wrap,
+    .dome-carousel .dmk-promo-img-wrap {
         height: 105px !important;
+        min-height: 105px !important;
+        max-height: 105px !important;
         border-top-left-radius: var(--dmk-radius-sm) !important;
         border-top-right-radius: var(--dmk-radius-sm) !important;
         padding: 0 !important;
+        flex-shrink: 0 !important;
     }
     .dmk-promo-overlay-inner {
-        width: 28px;
-        height: 28px;
-        font-size: 0.72rem;
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 0.72rem !important;
     }
     .dmk-promo-body {
-        padding: 7px 6px;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        height: 60px !important;
+        min-height: 60px !important;
+        max-height: 60px !important;
+        padding: 6px 5px !important;
+        flex: 1 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
     }
     .dmk-promo-title {
-        font-size: 0.72rem;
-        font-weight: 800;
-        line-height: 1.15;
-        margin-bottom: 0;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+        font-size: 0.70rem !important;
+        font-weight: 800 !important;
+        line-height: 1.2 !important;
+        height: 2.4em !important;
+        min-height: 2.4em !important;
+        max-height: 2.4em !important;
+        margin-bottom: 0 !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
     }
     .dmk-promo-desc {
         display: none !important;

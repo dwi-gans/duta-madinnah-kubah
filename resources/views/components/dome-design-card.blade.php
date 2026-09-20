@@ -31,9 +31,7 @@
         {{-- Konten teks --}}
         <div class="dmk-promo-body">
             <h5 class="dmk-promo-title">{{ $title }}</h5>
-            @if ($description)
-                <p class="dmk-promo-desc">{{ $description }}</p>
-            @endif
+            <p class="dmk-promo-desc">{{ $description ?: 'Model kubah presisi dengan standar arsitektur Islami modern.' }}</p>
         </div>
 
     </div>

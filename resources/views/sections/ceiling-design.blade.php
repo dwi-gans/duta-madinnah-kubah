@@ -79,6 +79,13 @@
                         'desc' => 'Gradasi cat awan langit yang lembut dipadukan dengan lingkaran kaligrafi hijau menenangkan seolah menatap langit terbuka yang teduh.',
                         'img' => asset('img/plafon/plafon-8.png'),
                     ],
+                    [
+                        'id' => 9,
+                        'title' => 'Plafon Awan',
+                        'tag' => 'Lukisan Kubah',
+                        'desc' => 'Karya seni lukis kubah motif awan dan langit biru cerah yang menghadirkan atmosfer sejuk, megah, dan ketenangan alami saat memandang ke atas.',
+                        'img' => asset('img/plafon/plafon-awan.png'),
+                    ],
                 ];
             @endphp
 

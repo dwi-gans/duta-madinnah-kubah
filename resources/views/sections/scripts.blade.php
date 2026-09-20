@@ -39,6 +39,13 @@
                 if ($('.navbar-toggler').is(':visible')) {
                     $('#navbarCollapse').collapse('hide');
                 }
+            // Hilangkan status focus/hover pada tombol navigasi slider setelah disentuh/diklik (agar tidak tetap kuning di mobile)
+            $('.dmk-slider-btn, .carousel-control-prev, .carousel-control-next, .dmk-hero-arrow').on('touchend mouseup pointerup click', function () {
+                var self = this;
+                setTimeout(function () {
+                    $(self).blur();
+                    $(self).find('.dmk-hero-arrow').blur();
+                }, 80);
             });
         });
     </script>

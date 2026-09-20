@@ -467,11 +467,20 @@ html {
     font-size: 14px;
     transition: all 0.2s ease;
 }
-.carousel-control-prev:hover .dmk-hero-arrow,
-.carousel-control-next:hover .dmk-hero-arrow {
-    background: var(--dmk-brass);
-    color: var(--dmk-carbon);
-    border-color: var(--dmk-brass);
+@media (hover: hover) and (pointer: fine) {
+    .carousel-control-prev:hover .dmk-hero-arrow,
+    .carousel-control-next:hover .dmk-hero-arrow {
+        background: var(--dmk-brass);
+        color: var(--dmk-carbon);
+        border-color: var(--dmk-brass);
+    }
+}
+.carousel-control-prev:focus,
+.carousel-control-next:focus,
+.carousel-control-prev:active,
+.carousel-control-next:active {
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .carousel-indicators.dmk-carousel-indicators {
@@ -1038,10 +1047,20 @@ html {
     padding: 85px 0;
 }
 
-/* Promo / Dome Card (Rounded) */
+/* Promo / Dome Card (Rounded & Uniform Equal Height) */
+.owl-carousel .owl-stage {
+    display: flex !important;
+}
+.owl-carousel .owl-item {
+    display: flex !important;
+    flex: 1 0 auto;
+    height: auto !important;
+}
 .data-card-item {
     width: 100%;
-    display: block;
+    height: 100%;
+    display: flex !important;
+    flex-direction: column;
 }
 .dmk-promo-card {
     background: var(--dmk-carbon);
@@ -1049,6 +1068,10 @@ html {
     border-radius: var(--dmk-radius-md);
     overflow: hidden;
     transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 .dmk-promo-card:hover {
     border-color: var(--dmk-brass);
@@ -1152,6 +1175,10 @@ html {
 .dmk-promo-body {
     padding: 20px 18px;
     background: var(--dmk-carbon);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 .dmk-portfolio-section .dmk-promo-body {
     background: #FFFFFF;
@@ -1162,8 +1189,13 @@ html {
     font-size: 1.15rem;
     font-weight: 900;
     color: #FFFFFF;
-    margin-bottom: 6px;
-    line-height: 1.25;
+    margin-bottom: 8px;
+    line-height: 1.28;
+    min-height: 2.6em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 .dmk-portfolio-section .dmk-promo-title {
     color: var(--dmk-text-dark);
@@ -1178,6 +1210,8 @@ html {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    min-height: 3.1em;
+    margin-top: auto;
 }
 .dmk-portfolio-section .dmk-promo-desc {
     color: var(--dmk-text-body);
@@ -1215,31 +1249,38 @@ html {
 .dmk-slider-btn-next {
     right: -22px;
 }
-.dmk-slider-btn:hover {
-    background: var(--dmk-brass);
-    color: var(--dmk-carbon);
-    border-color: var(--dmk-brass);
-    transform: translateY(-50%) scale(1.08);
+@media (hover: hover) and (pointer: fine) {
+    .dmk-slider-btn:hover {
+        background: var(--dmk-brass);
+        color: var(--dmk-carbon);
+        border-color: var(--dmk-brass);
+        transform: translateY(-50%) scale(1.08);
+    }
+    .dmk-slider-btn-light:hover {
+        background: var(--dmk-brass);
+        color: var(--dmk-carbon);
+        border-color: var(--dmk-brass);
+    }
+    .dmk-portfolio-section .dmk-slider-btn:hover {
+        background: var(--dmk-emerald);
+        color: #FFFFFF;
+        border-color: var(--dmk-emerald);
+    }
 }
 .dmk-slider-btn-light {
     background: var(--dmk-charcoal);
     border-color: var(--dmk-steel-light);
     color: #FFFFFF;
 }
-.dmk-slider-btn-light:hover {
-    background: var(--dmk-brass);
-    color: var(--dmk-carbon);
-    border-color: var(--dmk-brass);
-}
 .dmk-portfolio-section .dmk-slider-btn {
     background: #FFFFFF;
     border-color: var(--dmk-cream-border);
     color: var(--dmk-text-dark);
 }
-.dmk-portfolio-section .dmk-slider-btn:hover {
-    background: var(--dmk-emerald);
-    color: #FFFFFF;
-    border-color: var(--dmk-emerald);
+.dmk-slider-btn:focus,
+.dmk-slider-btn:active {
+    outline: none !important;
+    box-shadow: none !important;
 }
 .dmk-slider-hint {
     font-size: 0.78rem;
@@ -1890,16 +1931,37 @@ html {
     }
 
     /* ====================================================
-       3. HERO
+       3. HERO (Responsive Image — Tidak Terpotong di Mobile)
        ==================================================== */
-    .dmk-hero-section .carousel-item,
-    .dmk-hero-img { min-height: 75vh; height: 75vh; }
+    .dmk-hero-section .carousel-item {
+        min-height: 520px !important;
+        height: clamp(500px, 74vh, 620px) !important;
+        position: relative;
+    }
+    .dmk-hero-img {
+        min-height: 520px !important;
+        height: 100% !important;
+        width: 100% !important;
+        object-fit: cover !important;
+        object-position: center 20% !important; /* Fokus pada kubah & arsitektur masjid */
+        filter: brightness(0.68) contrast(1.1) !important;
+    }
 
-    /* Content: pull to bottom-left */
+    /* Vertical Gradient Overlay on Mobile: bagian atas jernih, bawah gelap untuk teks */
+    .dmk-hero-overlay {
+        background: linear-gradient(180deg,
+            rgba(5, 11, 20, 0.20) 0%,
+            rgba(5, 11, 20, 0.45) 30%,
+            rgba(5, 11, 20, 0.85) 65%,
+            rgba(5, 11, 20, 0.98) 100%
+        ) !important;
+    }
+
+    /* Content: letakkan di bagian bawah agar kubah di atas tampak jelas */
     .dmk-hero-content-wrap {
-        padding-top: 64px;
-        padding-bottom: 40px;
-        align-items: flex-end;
+        padding-top: 90px !important;
+        padding-bottom: 35px !important;
+        align-items: flex-end !important;
     }
 
     /* Eyebrow badge */

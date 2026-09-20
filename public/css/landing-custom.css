@@ -1074,7 +1074,7 @@ html {
     border-radius: var(--dmk-radius-md);
     overflow: hidden;
     transition: all 0.3s ease;
-    height: 500px !important;
+    height: 560px !important;
     display: flex !important;
     flex-direction: column !important;
     width: 100%;

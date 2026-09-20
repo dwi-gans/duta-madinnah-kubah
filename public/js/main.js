@@ -115,8 +115,8 @@
         stagePadding: 0,
         responsive: {
             0: {
-                items: 3,
-                margin: 8,
+                items: 1,
+                margin: 16,
                 center: false,
                 stagePadding: 0,
             },
@@ -145,8 +145,8 @@
         stagePadding: 0,
         responsive: {
             0: {
-                items: 3,
-                margin: 8,
+                items: 1,
+                margin: 16,
                 center: false,
                 stagePadding: 0,
             },
@@ -174,9 +174,9 @@
         margin: 30,
         responsive: {
             0: {
-                items: 3,
-                center: false,
-                margin: 8,
+                items: 1,
+                center: true,
+                margin: 16,
                 stagePadding: 0,
             },
             576: {

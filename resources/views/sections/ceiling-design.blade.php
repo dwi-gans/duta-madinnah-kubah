@@ -116,22 +116,15 @@
             @endforeach
         </div>
 
-        <!-- Banner Konsultasi Plafon -->
-        <div class="dmk-plafon-cta mt-4 mt-lg-5 p-3 p-lg-4 rounded-3 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
-            <div class="d-flex align-items-center gap-3">
-                <div class="dmk-plafon-cta-icon">
-                    <i class="bi bi-palette2 text-warning fs-3"></i>
-                </div>
-                <div>
-                    <h6 class="text-white mb-1 fw-bold">Punya Konsep Kaligrafi atau Warna Sendiri?</h6>
-                    <p class="text-white-50 small mb-0">Kami melayani pengerjaan motif plafon kustom sesuai request arsitektur dan filosofi masjid Anda.</p>
-                </div>
+        <!-- Banner Informasi Motif Plafon Kustom -->
+        <div class="dmk-plafon-cta mt-4 mt-lg-5 p-3 p-lg-4 rounded-3 d-flex align-items-center gap-3">
+            <div class="dmk-plafon-cta-icon">
+                <i class="bi bi-palette2 text-warning fs-3"></i>
             </div>
-            <a href="https://wa.me/6281331181861?text=Halo%20Admin%20Duta%20Madinna%20Kubah,%20saya%20ingin%20konsultasi%20mengenai%20pembuatan%20motif%20plafon%20kubah%20masjid"
-               target="_blank"
-               class="btn dmk-btn-gold px-4 py-2 text-nowrap">
-                <i class="fab fa-whatsapp me-2"></i>Konsultasi Plafon
-            </a>
+            <div>
+                <h6 class="text-white mb-1 fw-bold">Punya Konsep Kaligrafi atau Warna Sendiri?</h6>
+                <p class="text-white-50 small mb-0">Kami melayani pengerjaan motif plafon kustom sesuai request arsitektur dan filosofi masjid Anda.</p>
+            </div>
         </div>
     </div>
 </section>

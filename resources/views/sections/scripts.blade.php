@@ -9,36 +9,44 @@
     <!-- Inisialisasi Carousel Tombol Navigasi -->
     <script>
         $(document).ready(function () {
-            $('#promo-prev').on('click', function (e) {
-                e.preventDefault();
-                $('.promo-carousel').trigger('prev.owl.carousel');
-                $(this).blur();
-            });
-            $('#promo-next').on('click', function (e) {
-                e.preventDefault();
-                $('.promo-carousel').trigger('next.owl.carousel');
-                $(this).blur();
-            });
-            $('#porto-prev').on('click', function (e) {
-                e.preventDefault();
-                $('.portfolio-carousel').trigger('prev.owl.carousel');
-                $(this).blur();
-            });
-            $('#porto-next').on('click', function (e) {
-                e.preventDefault();
-                $('.portfolio-carousel').trigger('next.owl.carousel');
-                $(this).blur();
-            });
-            $('#dome-prev').on('click', function (e) {
-                e.preventDefault();
-                $('.dome-carousel').trigger('prev.owl.carousel');
-                $(this).blur();
-            });
-            $('#dome-next').on('click', function (e) {
-                e.preventDefault();
-                $('.dome-carousel').trigger('next.owl.carousel');
-                $(this).blur();
-            });
+        function triggerBtnBounce($btn) {
+            $btn.addClass('dmk-btn-bounce');
+            setTimeout(function () {
+                $btn.removeClass('dmk-btn-bounce');
+                $btn.blur();
+            }, 320);
+        }
+
+        $('#promo-prev').on('click', function (e) {
+            e.preventDefault();
+            $('.promo-carousel').trigger('prev.owl.carousel');
+            triggerBtnBounce($(this));
+        });
+        $('#promo-next').on('click', function (e) {
+            e.preventDefault();
+            $('.promo-carousel').trigger('next.owl.carousel');
+            triggerBtnBounce($(this));
+        });
+        $('#porto-prev').on('click', function (e) {
+            e.preventDefault();
+            $('.portfolio-carousel').trigger('prev.owl.carousel');
+            triggerBtnBounce($(this));
+        });
+        $('#porto-next').on('click', function (e) {
+            e.preventDefault();
+            $('.portfolio-carousel').trigger('next.owl.carousel');
+            triggerBtnBounce($(this));
+        });
+        $('#dome-prev').on('click', function (e) {
+            e.preventDefault();
+            $('.dome-carousel').trigger('prev.owl.carousel');
+            triggerBtnBounce($(this));
+        });
+        $('#dome-next').on('click', function (e) {
+            e.preventDefault();
+            $('.dome-carousel').trigger('next.owl.carousel');
+            triggerBtnBounce($(this));
+        });
 
             // Sinkronisasi indikator hero carousel saat slide berpindah
             $('#heroCarousel').on('slide.bs.carousel', function (e) {

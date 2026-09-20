@@ -2443,6 +2443,9 @@ html {
     .dmk-slider-btn,
     .dmk-slider-btn-prev,
     .dmk-slider-btn-next,
+    .dmk-portfolio-section .dmk-slider-btn,
+    .dmk-portfolio-section .dmk-slider-btn-prev,
+    .dmk-portfolio-section .dmk-slider-btn-next,
     .dmk-slider-btn:hover,
     .dmk-slider-btn:focus,
     .dmk-slider-btn:active,
@@ -2451,38 +2454,97 @@ html {
     .dmk-slider-btn-prev:active,
     .dmk-slider-btn-next:hover,
     .dmk-slider-btn-next:focus,
-    .dmk-slider-btn-next:active {
+    .dmk-slider-btn-next:active,
+    .dmk-portfolio-section .dmk-slider-btn:hover,
+    .dmk-portfolio-section .dmk-slider-btn:focus,
+    .dmk-portfolio-section .dmk-slider-btn:active,
+    .dmk-portfolio-section .dmk-slider-btn-prev:hover,
+    .dmk-portfolio-section .dmk-slider-btn-prev:focus,
+    .dmk-portfolio-section .dmk-slider-btn-prev:active,
+    .dmk-portfolio-section .dmk-slider-btn-next:hover,
+    .dmk-portfolio-section .dmk-slider-btn-next:focus,
+    .dmk-portfolio-section .dmk-slider-btn-next:active {
         position: absolute !important;
         top: auto !important;
         bottom: 0px !important;
-        transform: none !important;
+        transform: translateY(0) scale(1) !important;
         width: 32px !important;
         height: 32px !important;
         font-size: 11px !important;
         z-index: 25 !important;
-        background: rgba(10, 22, 40, 0.9) !important;
-        border: 1px solid var(--dmk-brass) !important;
-        color: #FFFFFF !important;
         border-radius: 50% !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         outline: none !important;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.5) !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.4) !important;
+        transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease !important;
     }
+
+    /* Dark theme slider buttons (Promo & Kubah) */
+    .dmk-slider-btn,
+    .dmk-slider-btn:hover,
+    .dmk-slider-btn:focus,
+    .dmk-slider-btn:active {
+        background: rgba(10, 22, 40, 0.9) !important;
+        border: 1px solid var(--dmk-brass) !important;
+        color: #FFFFFF !important;
+    }
+
+    /* Light theme slider buttons (Portofolio) */
+    .dmk-portfolio-section .dmk-slider-btn,
+    .dmk-portfolio-section .dmk-slider-btn:hover,
+    .dmk-portfolio-section .dmk-slider-btn:focus,
+    .dmk-portfolio-section .dmk-slider-btn:active {
+        background: #FFFFFF !important;
+        border: 1px solid var(--dmk-cream-border) !important;
+        color: var(--dmk-text-dark) !important;
+        box-shadow: 0 4px 10px rgba(10, 22, 40, 0.18) !important;
+    }
+
     .dmk-slider-btn-prev,
     .dmk-slider-btn-prev:hover,
     .dmk-slider-btn-prev:focus,
-    .dmk-slider-btn-prev:active {
+    .dmk-slider-btn-prev:active,
+    .dmk-portfolio-section .dmk-slider-btn-prev,
+    .dmk-portfolio-section .dmk-slider-btn-prev:hover,
+    .dmk-portfolio-section .dmk-slider-btn-prev:focus,
+    .dmk-portfolio-section .dmk-slider-btn-prev:active {
         left: calc(50% - 38px) !important;
         right: auto !important;
     }
+
     .dmk-slider-btn-next,
     .dmk-slider-btn-next:hover,
     .dmk-slider-btn-next:focus,
-    .dmk-slider-btn-next:active {
+    .dmk-slider-btn-next:active,
+    .dmk-portfolio-section .dmk-slider-btn-next,
+    .dmk-portfolio-section .dmk-slider-btn-next:hover,
+    .dmk-portfolio-section .dmk-slider-btn-next:focus,
+    .dmk-portfolio-section .dmk-slider-btn-next:active {
         right: calc(50% - 38px) !important;
         left: auto !important;
+    }
+
+    /* Animasi saat ditekan / diklik: naik sedikit (5px) lalu membal balik ke bawah */
+    .dmk-btn-bounce,
+    .dmk-slider-btn:active,
+    .dmk-portfolio-section .dmk-slider-btn:active {
+        animation: dmkBtnBounce 0.32s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    }
+
+    @keyframes dmkBtnBounce {
+        0% {
+            transform: translateY(0) scale(1);
+        }
+        40% {
+            transform: translateY(-5px) scale(1.12);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+        100% {
+            transform: translateY(0) scale(1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
     }
 
     /* Hero arrows: still hidden on mobile (hero uses swipe & indicators) */

@@ -1,2 +1,6 @@
 User-agent: *
-Disallow:
+Disallow: /dashboard/
+Disallow: /auth/
+Allow: /
+
+Sitemap: https://madinnakubah.com/sitemap.xml

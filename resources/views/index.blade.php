@@ -3,11 +3,21 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Duta Madinna Kubah</title>
+    <title>Duta Madinna Kubah | Spesialis Pembuatan & Pemasangan Kubah Masjid</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Kubah Masjid Modern, Kubah Enamel, Kubah Galvalum, Kubah Alumunium, Kubah Stainless Gold" name="keywords">
-    <meta content="Duta Madinna Kubah - Spesialis Pembuatan & Pemasangan Kubah Masjid Profesional di Seluruh Indonesia" name="description">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://madinnakubah.com/">
+    <meta content="madinna kubah, duta madinna kubah, kubah masjid modern, kontraktor kubah masjid, kubah enamel, kubah galvalum, kubah maspion, harga kubah masjid" name="keywords">
+    <meta content="PT Duta Madinna Kubah - Spesialis produsen & kontraktor kubah masjid enamel dan galvalum bergaransi 20 tahun resmi Maspion. Melayani proyek di seluruh Indonesia." name="description">
     <meta name="google-site-verification" content="qr_a3BIEo8YC_dNUaHdW205u46rAkoJdofXFCSa7cxM">
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://madinnakubah.com/">
+    <meta property="og:site_name" content="Duta Madinna Kubah">
+    <meta property="og:title" content="Duta Madinna Kubah | Spesialis Kubah Masjid Profesional">
+    <meta property="og:description" content="Kontraktor kubah masjid enamel & galvalum bergaransi 20 tahun. Konsultasi & estimasi RAB gratis.">
+    <meta property="og:image" content="https://madinnakubah.com/img/carousel-1.jpg">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ Vite::image('logo.png') }}" type="image/x-icon">

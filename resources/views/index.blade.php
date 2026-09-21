@@ -19,8 +19,12 @@
     <meta property="og:description" content="Kontraktor kubah masjid enamel & galvalum bergaransi 20 tahun. Konsultasi & estimasi RAB gratis.">
     <meta property="og:image" content="https://madinnakubah.com/img/carousel-1.jpg">
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ Vite::image('logo.png') }}" type="image/x-icon">
+    <!-- Favicon & Touch Icons for Google Search & Browsers -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('favicon-48x48.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('favicon-96x96.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('favicon-192x192.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

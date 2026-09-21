@@ -4,7 +4,7 @@
     <div class="dmk-geo-bg" aria-hidden="true"></div>
 
     <div class="container position-relative">
-        <div class="row g-0 align-items-center">
+        <div class="row g-0 g-lg-4 align-items-center dmk-feature-row">
             <!-- Section header -->
             <div class="col-12 mb-4 mb-lg-5">
                 <div class="d-flex flex-wrap align-items-end justify-content-between gap-3">
@@ -23,8 +23,8 @@
                 </div>
             </div>
 
-            <!-- Left feature items -->
-            <div class="col-12 col-lg-4">
+            <!-- Left feature items (Card 01 & 02) -->
+            <div class="col-12 col-lg-4 dmk-feature-col dmk-feature-col-left">
                 <x-feature-item
                     number="01"
                     icon="fa-mosque"
@@ -37,8 +37,8 @@
                     description="Sertifikat garansi resmi PT. Maspion atas ketahanan warna enamel dan galvalum hingga 20 tahun tanpa pengecatan ulang." />
             </div>
 
-            <!-- Center image -->
-            <div class="col-12 col-lg-4 py-4 py-lg-0">
+            <!-- Center image (Craftsmanship) -->
+            <div class="col-12 col-lg-4 py-3 py-lg-0 dmk-feature-col dmk-feature-col-center">
                 <div class="dmk-feature-visual wow zoomIn" data-wow-delay="0.3s">
                     <img src="{{ Vite::image('feature.jpg') }}" alt="Proses Konstruksi Kubah" class="dmk-feature-img">
                     <div class="dmk-feature-img-overlay"></div>
@@ -46,8 +46,8 @@
                 </div>
             </div>
 
-            <!-- Right feature items -->
-            <div class="col-12 col-lg-4">
+            <!-- Right feature items (Card 03 & 04) -->
+            <div class="col-12 col-lg-4 dmk-feature-col dmk-feature-col-right">
                 <x-feature-item
                     number="03"
                     icon="fa-helmet-safety"

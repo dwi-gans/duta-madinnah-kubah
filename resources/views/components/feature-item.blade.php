@@ -20,6 +20,9 @@
         </div>
         <h5 class="dmk-feat-title">{{ $title }}</h5>
         <p class="dmk-feat-desc">{{ $description }}</p>
+        <div class="dmk-feat-more mt-auto pt-1">
+            <span>Detail <i class="fa-solid fa-chevron-right ms-1"></i></span>
+        </div>
         <div class="dmk-feat-line"></div>
     </div>
 </div>

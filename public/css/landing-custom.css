@@ -1030,6 +1030,29 @@ html {
     border-radius: var(--dmk-radius-pill);
 }
 
+/* Bento Feature Desktop Spacing */
+@media (min-width: 992px) {
+    .dmk-feature-row {
+        --bs-gutter-x: 2.25rem !important;
+    }
+    .dmk-feature-col-left {
+        padding-right: 1.25rem !important;
+    }
+    .dmk-feature-col-center {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+    .dmk-feature-col-right {
+        padding-left: 1.25rem !important;
+    }
+    .dmk-feat-more {
+        display: none !important;
+    }
+    .dmk-feat-item:last-child {
+        margin-bottom: 0;
+    }
+}
+
 /* ═══════════════════════════════════════════════════
    DOME CATALOG & CAROUSELS (ROUNDED CARDS)
    ═══════════════════════════════════════════════════ */
@@ -1984,8 +2007,42 @@ html {
     .dmk-media-dialog { max-width: 88vw; }
     .dmk-service-dialog { max-width: 88vw; }
 
-    /* Feature: center image moves to top */
-    .dmk-feature-visual { height: 280px; }
+    /* Feature: 2-column top (01 & 02), image banner middle, 2-column bottom (03 & 04) */
+    .dmk-feature-row {
+        row-gap: 12px;
+    }
+    .dmk-feature-col-left,
+    .dmk-feature-col-right {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .dmk-feature-col-left {
+        margin-bottom: 12px !important;
+    }
+    .dmk-feature-col-center {
+        width: 100% !important;
+        padding: 0 !important;
+        margin-bottom: 12px !important;
+    }
+    .dmk-feature-visual {
+        height: 220px !important;
+        border-radius: var(--dmk-radius-md) !important;
+    }
+    .dmk-feat-item {
+        margin-bottom: 0 !important;
+        height: 100% !important;
+        display: flex !important;
+    }
+    .dmk-feat-card {
+        height: 100% !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
 }
 
 /* ─── MOBILE (≤ 575px) ──────────────────────────────────────── */
@@ -2351,37 +2408,47 @@ html {
     /* ====================================================
        8. FEATURE / KEUNGGULAN (Responsive 2-column Bento)
        ==================================================== */
-    .dmk-feature-section .row.g-0 {
-        row-gap: 12px;
+    .dmk-feature-row {
+        row-gap: 8px !important;
     }
-    .dmk-feature-section .col-12.col-lg-4:first-of-type,
-    .dmk-feature-section .col-12.col-lg-4:last-of-type {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-        width: 100%;
+    .dmk-feature-col-left,
+    .dmk-feature-col-right {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
-    .dmk-feature-section .col-12.col-lg-4.py-4 {
-        width: 100%;
-        padding-top: 4px !important;
-        padding-bottom: 4px !important;
+    .dmk-feature-col-left {
+        margin-bottom: 8px !important;
+    }
+    .dmk-feature-col-center {
+        width: 100% !important;
+        margin-bottom: 8px !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
     .dmk-feature-visual {
-        height: 150px;
-        border-radius: var(--dmk-radius-md);
+        height: 155px !important;
+        border-radius: var(--dmk-radius-md) !important;
     }
     .dmk-feature-label  { font-size: 0.64rem; padding: 3px 10px; bottom: 10px; left: 10px; }
 
     .dmk-feat-item {
-        margin-bottom: 0;
-        height: 100%;
+        margin-bottom: 0 !important;
+        height: 100% !important;
+        display: flex !important;
     }
     .dmk-feat-card {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        padding: 12px 10px;
-        border-radius: var(--dmk-radius-sm);
+        height: 100% !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 12px 10px !important;
+        border-radius: var(--dmk-radius-sm) !important;
         cursor: pointer;
         -webkit-tap-highlight-color: transparent;
         transition: border-color 0.2s ease, background-color 0.2s ease;
@@ -2391,10 +2458,10 @@ html {
         background: var(--dmk-slate) !important;
     }
     .dmk-feat-icon {
-        width: 30px;
-        height: 30px;
-        font-size: 12px;
-        border-radius: var(--dmk-radius-xs);
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 12px !important;
+        border-radius: var(--dmk-radius-xs) !important;
     }
     .dmk-feat-num   { font-size: 0.85rem; }
     .dmk-feat-title {
@@ -2409,6 +2476,16 @@ html {
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        margin-bottom: 4px;
+    }
+    .dmk-feat-more {
+        display: inline-flex !important;
+        font-size: 0.64rem;
+        color: var(--dmk-brass-light);
+        font-weight: 700;
+        margin-top: auto;
+        align-items: center;
+        letter-spacing: 0.02em;
     }
 
     /* ====================================================

@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="google-site-verification" content="qr_a3BIEo8YC_dNUaHdW205u46rAkoJdofXFCSa7cxM">
 
     <title>{{ config('app.name', 'Duta Madinna Kubah') }} | Admin Panel</title>
 

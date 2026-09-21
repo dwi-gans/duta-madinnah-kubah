@@ -40,7 +40,11 @@ class PortfolioController extends Controller
             return back()->with('success', 'Portofolio berhasil ditambahkan!');
         }
 
-        $imageUrl = $storage->upload($request->file('image'));
+        try {
+            $imageUrl = $storage->upload($request->file('image'));
+        } catch (\Throwable $e) {
+            return back()->withInput()->with('error', 'Gagal mengupload gambar. Silakan coba lagi.');
+        }
 
         Portfolio::create([
             'title'       => $validated['title'],
@@ -70,8 +74,12 @@ class PortfolioController extends Controller
         $imageUrl = $portfolio->image_path;
 
         if ($request->hasFile('image')) {
-            $storage->delete($portfolio->image_path);
-            $imageUrl = $storage->upload($request->file('image'));
+            try {
+                $storage->delete($portfolio->image_path);
+                $imageUrl = $storage->upload($request->file('image'));
+            } catch (\Throwable $e) {
+                return back()->withInput()->with('error', 'Gagal mengupload gambar. Silakan coba lagi.');
+            }
         }
 
         $portfolio->update([
@@ -87,7 +95,12 @@ class PortfolioController extends Controller
 
     public function destroy(Portfolio $portfolio, SupabaseStorageService $storage)
     {
-        $storage->delete($portfolio->image_path);
+        try {
+            $storage->delete($portfolio->image_path);
+        } catch (\Throwable $e) {
+            // Tetap hapus record dari DB meski Supabase gagal
+        }
+
         $portfolio->delete();
 
         Cache::forget('home_portfolios');

@@ -39,7 +39,11 @@ class InformationController extends Controller
             return back()->with('success', 'Informasi berhasil ditambahkan!');
         }
 
-        $imageUrl = $storage->upload($request->file('image'));
+        try {
+            $imageUrl = $storage->upload($request->file('image'));
+        } catch (\Throwable $e) {
+            return back()->withInput()->with('error', 'Gagal mengupload gambar. Silakan coba lagi.');
+        }
 
         Information::create([
             'title'       => $validated['title'],
@@ -68,8 +72,12 @@ class InformationController extends Controller
         $imageUrl = $information->image_path;
 
         if ($request->hasFile('image')) {
-            $storage->delete($information->image_path);
-            $imageUrl = $storage->upload($request->file('image'));
+            try {
+                $storage->delete($information->image_path);
+                $imageUrl = $storage->upload($request->file('image'));
+            } catch (\Throwable $e) {
+                return back()->withInput()->with('error', 'Gagal mengupload gambar. Silakan coba lagi.');
+            }
         }
 
         $information->update([
@@ -85,7 +93,12 @@ class InformationController extends Controller
 
     public function destroy(Information $information, SupabaseStorageService $storage)
     {
-        $storage->delete($information->image_path);
+        try {
+            $storage->delete($information->image_path);
+        } catch (\Throwable $e) {
+            // Tetap hapus record dari DB meski Supabase gagal
+        }
+
         $information->delete();
 
         Cache::forget('home_informations');

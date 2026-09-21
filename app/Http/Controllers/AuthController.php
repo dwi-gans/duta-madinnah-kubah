@@ -17,17 +17,24 @@ class AuthController extends Controller
             'password' => 'required|min:6',
         ]);
 
+        try {
+            if (!Auth::attempt($request->only('email', 'password'))) {
 
-        if (!Auth::attempt($request->only('email', 'password'))) {
+                throw ValidationException::withMessages([
+                    'email' => 'Invalid credentials',
+                ]);
+            }
 
-            throw ValidationException::withMessages([
-                'email' => 'Invalid credentials',
+            $request->session()->regenerate();
+
+            return redirect()->intended(route('dashboard', absolute: false));
+        } catch (ValidationException $e) {
+            throw $e;
+        } catch (\Throwable $e) {
+            return back()->withInput()->withErrors([
+                'email' => 'Terjadi kesalahan sistem. Silakan coba lagi.',
             ]);
         }
-
-        $request->session()->regenerate();
-
-        return redirect()->intended(route('dashboard', absolute: false));
     }
 
     public function logout(Request $request)

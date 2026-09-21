@@ -38,13 +38,6 @@
                         'img' => asset('img/plafon/plafon-2.png'),
                     ],
                     [
-                        'id' => 3,
-                        'title' => 'Floral Geometris Hitam Emas',
-                        'tag' => 'Modern Luxury',
-                        'desc' => 'Kombinasi kontras mewah antara warna hitam elegan dan goresan emas ornamen bunga melingkar bertingkat untuk arsitektur masjid kontemporer.',
-                        'img' => asset('img/plafon/plafon-3.png'),
-                    ],
-                    [
                         'id' => 4,
                         'title' => 'Kubah Putih Kaligrafi Marun',
                         'tag' => 'Minimalis Khusyuk',

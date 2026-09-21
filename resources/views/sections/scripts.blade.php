@@ -160,11 +160,27 @@
             var title = trigger.getAttribute('data-title')       || '';
             var desc  = trigger.getAttribute('data-description') || '';
             var image = trigger.getAttribute('data-image')       || '';
-            var imgEl   = document.getElementById('dmk-modal-img');
-            var titleEl = document.getElementById('dmk-modal-title');
-            var descEl  = document.getElementById('dmk-modal-desc');
+            var icon  = trigger.getAttribute('data-icon')        || '';
 
-            if (imgEl)   { imgEl.src = image; imgEl.alt = title; }
+            var imgEl      = document.getElementById('dmk-modal-img');
+            var imgZone    = document.getElementById('dmk-modal-img-zone');
+            var iconHeader = document.getElementById('dmk-modal-icon-header');
+            var iconEl     = document.getElementById('dmk-modal-icon');
+            var titleEl    = document.getElementById('dmk-modal-title');
+            var descEl     = document.getElementById('dmk-modal-desc');
+
+            if (image) {
+                if (imgZone)    { imgZone.style.display = 'block'; }
+                if (iconHeader) { iconHeader.style.display = 'none'; }
+                if (imgEl)      { imgEl.src = image; imgEl.alt = title; }
+            } else {
+                if (imgZone)    { imgZone.style.display = 'none'; }
+                if (iconHeader) { iconHeader.style.display = 'flex'; }
+                if (iconEl && icon) {
+                    iconEl.className = 'fa-solid ' + icon;
+                }
+            }
+
             if (titleEl) { titleEl.textContent = title; }
             if (descEl)  { descEl.textContent = desc || 'Hubungi kami untuk informasi lebih lanjut.'; }
         });

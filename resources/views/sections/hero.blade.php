@@ -23,9 +23,9 @@
 
             <x-carousel-header-item
                 :src="Vite::image('carousel-header-item-4.jpg')"
-                badge="4 WORKSHOP NASIONAL"
+                badge="6 WORKSHOP NASIONAL"
                 title="Jangkauan Dari Sabang Sampai Merauke"
-                subtitle="Didukung 4 workshop strategis di Jawa Timur, Kalimantan Selatan, Kalimantan Timur, dan Nusa Tenggara Barat, proyek Anda di seluruh Indonesia kami tangani langsung dari lokasi terdekat." />
+                subtitle="Didukung 6 workshop strategis di Jawa Timur, Kalimantan Selatan, Kalimantan Timur, NTB, Medan, dan Pontianak, proyek Anda di seluruh Indonesia kami tangani langsung dari lokasi terdekat." />
         </div>
 
         <!-- Carousel Controls -->
@@ -64,12 +64,12 @@
                 </div>
                 <div class="dmk-trust-sep"></div>
                 <div class="dmk-trust-stat">
-                    <span class="dmk-trust-num">500+</span>
+                    <span class="dmk-trust-num">2000+</span>
                     <span class="dmk-trust-label">Proyek Selesai</span>
                 </div>
                 <div class="dmk-trust-sep"></div>
                 <div class="dmk-trust-stat">
-                    <span class="dmk-trust-num">4</span>
+                    <span class="dmk-trust-num">6</span>
                     <span class="dmk-trust-label">Workshop Nasional</span>
                 </div>
                 <div class="dmk-trust-sep d-none d-md-block"></div>

@@ -939,7 +939,7 @@ html {
 }
 
 .dmk-feat-item {
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }
 .dmk-feat-card {
     background: var(--dmk-charcoal);
@@ -948,11 +948,13 @@ html {
     padding: 24px 22px;
     transition: all 0.3s ease;
     position: relative;
+    cursor: pointer;
 }
 .dmk-feat-card:hover {
     border-color: var(--dmk-brass);
     background: var(--dmk-slate);
-    transform: translateX(4px);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
 }
 .dmk-feat-icon {
     width: 44px;
@@ -1604,6 +1606,45 @@ html {
     gap: 5px;
     z-index: 2;
 }
+
+/* Icon header when modal is triggered from feature cards without photos */
+.dmk-media-icon-header {
+    background: linear-gradient(135deg, rgba(16, 74, 60, 0.95), var(--dmk-charcoal));
+    padding: 28px 20px 20px;
+    border-bottom: 1px solid var(--dmk-steel);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+}
+.dmk-media-icon-box {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--dmk-radius-md);
+    background: rgba(5, 11, 20, 0.6);
+    border: 2px solid var(--dmk-brass);
+    color: var(--dmk-brass);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+.dmk-media-icon-badge {
+    background: rgba(5, 11, 20, 0.7);
+    border: 1px solid var(--dmk-emerald-mid);
+    color: var(--dmk-brass-light);
+    font-size: 0.72rem;
+    font-weight: 800;
+    font-family: var(--dmk-font-heading);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: var(--dmk-radius-pill);
+}
+
 .dmk-service-body {
     padding: 18px 20px;
 }
@@ -2341,6 +2382,13 @@ html {
         flex-direction: column;
         padding: 12px 10px;
         border-radius: var(--dmk-radius-sm);
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+    .dmk-feat-card:active {
+        border-color: var(--dmk-brass) !important;
+        background: var(--dmk-slate) !important;
     }
     .dmk-feat-icon {
         width: 30px;

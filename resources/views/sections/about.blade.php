@@ -9,7 +9,7 @@
             <!-- Floating stat badge -->
             <div class="dmk-about-badge wow zoomIn" data-wow-delay="0.5s">
                 <div class="dmk-about-badge-geo" aria-hidden="true"></div>
-                <span class="dmk-about-badge-num">500+</span>
+                <span class="dmk-about-badge-num">2000+</span>
                 <span class="dmk-about-badge-label">Kubah Masjid<br>Terbangun</span>
             </div>
 
@@ -41,7 +41,7 @@
             <!-- Workshop locations -->
             <div class="dmk-workshops mb-4">
                 <div class="dmk-workshops-label">
-                    <i class="fa-solid fa-industry me-2"></i>4 Workshop Strategis Nasional
+                    <i class="fa-solid fa-industry me-2"></i>6 Workshop Strategis Nasional
                 </div>
                 <div class="dmk-workshop-list">
                     <div class="dmk-workshop-item">
@@ -70,6 +70,20 @@
                         <div>
                             <strong>Lombok Barat</strong>
                             <span>Nusa Tenggara Barat</span>
+                        </div>
+                    </div>
+                    <div class="dmk-workshop-item">
+                        <span class="dmk-workshop-num">05</span>
+                        <div>
+                            <strong>Medan</strong>
+                            <span>Sumatera Utara</span>
+                        </div>
+                    </div>
+                    <div class="dmk-workshop-item">
+                        <span class="dmk-workshop-num">06</span>
+                        <div>
+                            <strong>Pontianak</strong>
+                            <span>Kalimantan Barat</span>
                         </div>
                     </div>
                 </div>

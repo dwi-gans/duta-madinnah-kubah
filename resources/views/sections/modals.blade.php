@@ -11,13 +11,23 @@
                     <i class="fa fa-times"></i>
                 </button>
 
-                {{-- Zona gambar --}}
-                <div class="dmk-media-img-zone">
+                {{-- Zona gambar / icon --}}
+                <div class="dmk-media-img-zone" id="dmk-modal-img-zone">
                     <img id="dmk-modal-img" src="" alt="" class="dmk-media-img">
                     <div class="dmk-media-img-gradient"></div>
                     <div class="dmk-media-img-badge">
                         <i class="fa fa-building"></i>
                         Duta Madinna Kubah
+                    </div>
+                </div>
+
+                {{-- Header khusus jika modal tanpa gambar (seperti keunggulan) --}}
+                <div id="dmk-modal-icon-header" class="dmk-media-icon-header" style="display: none;">
+                    <div class="dmk-media-icon-box">
+                        <i id="dmk-modal-icon" class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="dmk-media-icon-badge">
+                        <i class="fa-solid fa-award me-1"></i> Keunggulan DMK
                     </div>
                 </div>
 

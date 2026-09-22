@@ -4,9 +4,9 @@
         <div class="carousel-inner">
             <x-carousel-header-item
                 :src="Vite::image('carousel-header-item-1.jpg')"
-                badge="KONTRAKTOR KUBAH MASJID (EST. 2004)"
+                badge="KONTRAKTOR KUBAH MASJID (EST. 2008)"
                 title="Mahakarya Kubah Masjid Bergaransi 20 Tahun"
-                subtitle="Kami membangun kubah masjid yang bukan sekadar indah, tetapi kokoh, presisi, dan abadi. Didukung teknologi oven enamel, standar material pabrik, dan tim ahli berpengalaman sejak 2004."
+                subtitle="Kami membangun kubah masjid yang bukan sekadar indah, tetapi kokoh, presisi, dan abadi. Didukung teknologi oven enamel, standar material pabrik, dan tim ahli berpengalaman sejak 2008."
                 class="active" />
 
             <x-carousel-header-item

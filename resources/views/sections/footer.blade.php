@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <p class="text-white-50 small pe-lg-4 mb-4">
-                    Melayani pembuatan kubah masjid enamel porselen Maspion, aluminium, galvalum, dan stainless gold dengan garansi resmi dan pengerjaan tepat waktu ke seluruh penjuru Nusantara.
+                    Melayani pembuatan kubah masjid enamel porselen, aluminium, galvalum, dan stainless gold dengan garansi resmi dan pengerjaan tepat waktu ke seluruh penjuru Nusantara.
                 </p>
 
                 <div class="dmk-footer-contact-list">

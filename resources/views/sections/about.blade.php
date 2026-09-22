@@ -16,7 +16,7 @@
             <!-- Year strip -->
             <div class="dmk-about-year">
                 <span>EST.</span>
-                <strong>2004</strong>
+                <strong>2008</strong>
             </div>
         </div>
 
@@ -94,7 +94,7 @@
                 <div class="col-6">
                     <div class="dmk-pillar">
                         <i class="fa-solid fa-certificate"></i>
-                        <span>Garansi Resmi Maspion 20 Tahun</span>
+                        <span>Garansi Resmi 20 Tahun</span>
                     </div>
                 </div>
                 <div class="col-6">

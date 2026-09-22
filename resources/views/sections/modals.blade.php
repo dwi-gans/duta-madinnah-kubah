@@ -51,10 +51,10 @@
 
     <x-material-modal id="modal-enamel" title="Kubah Masjid Enamel" image="enamel.png"
         badge="Paling Populer & Tahan Lama"
-        description="Kubah berbahan dasar plat steel low carbon khusus standar enamel, dilapisi porselen enamel coating dari PT. Maspion dengan pemanasan oven bersuhu tinggi (± 850°C). Menghasilkan permukaan porselen yang sangat keras, mengkilap mewah, tahan gores, dan warna tidak akan pudar selama puluhan tahun."
+        description="Kubah berbahan dasar plat steel low carbon khusus standar enamel, dilapisi porselen enamel coating dengan pemanasan oven bersuhu tinggi (± 850°C). Menghasilkan permukaan porselen yang sangat keras, mengkilap mewah, tahan gores, dan warna tidak akan pudar selama puluhan tahun."
         :specs="[
             'Ketebalan Plat' => '1.0 - 1.2 mm (Steel Low Carbon)',
-            'Finishing' => 'Enamel Coating PT. Maspion',
+            'Finishing' => 'Enamel Coating',
             'Ketahanan Warna' => 'Garansi Resmi > 20 Tahun',
             'Suhu Pembakaran' => '± 850°C (Anti Retak & Lepas)'
         ]"

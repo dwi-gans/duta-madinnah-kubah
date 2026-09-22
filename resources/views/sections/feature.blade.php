@@ -34,7 +34,7 @@
                     number="02"
                     icon="fa-certificate"
                     title="Garansi Tertulis 20 Tahun"
-                    description="Sertifikat garansi resmi PT. Maspion atas ketahanan warna enamel dan galvalum hingga 20 tahun tanpa pengecatan ulang." />
+                    description="Sertifikat garansi resmi atas ketahanan warna enamel dan galvalum hingga 20 tahun tanpa pengecatan ulang." />
             </div>
 
             <!-- Center image (Craftsmanship) -->

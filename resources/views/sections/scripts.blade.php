@@ -51,7 +51,11 @@
             // Sinkronisasi indikator hero carousel saat slide berpindah
             $('#heroCarousel').on('slide.bs.carousel', function (e) {
                 $('.dmk-carousel-indicators button').removeClass('active').removeAttr('aria-current');
-                $('.dmk-carousel-indicators button[data-bs-slide-to="' + e.to + '"]').addClass('active').attr('aria-current', 'true');
+                var $activeBtn = $('.dmk-carousel-indicators button[data-bs-slide-to="' + e.to + '"]');
+                $activeBtn.addClass('active').attr('aria-current', 'true');
+                if ($activeBtn.length && $activeBtn[0].scrollIntoView) {
+                    $activeBtn[0].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                }
             });
 
             // Auto-tutup navbar saat menu diklik di layar mobile

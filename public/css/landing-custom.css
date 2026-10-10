@@ -489,26 +489,40 @@ html {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 8px;
+    gap: 6px;
     margin: 0;
-    padding: 0;
+    padding: 6px 14px;
     border: none;
     z-index: 10;
+    max-width: 90vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    border-radius: 9999px;
+    background: rgba(10, 22, 40, 0.45);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    touch-action: pan-x;
+}
+.carousel-indicators.dmk-carousel-indicators::-webkit-scrollbar {
+    display: none;
 }
 .carousel-indicators.dmk-carousel-indicators button {
+    flex: 0 0 auto;
     box-sizing: content-box;
-    width: 24px;
+    width: 16px;
     height: 4px;
     background-color: rgba(255, 255, 255, 0.4) !important;
     border: none !important;
     border-radius: 9999px !important;
-    margin: 0 4px !important;
+    margin: 0 2px !important;
     opacity: 0.6;
     transition: all 0.35s ease !important;
     cursor: pointer;
 }
 .carousel-indicators.dmk-carousel-indicators button.active {
-    width: 44px;
+    width: 32px;
     background-color: var(--dmk-brass) !important;
     opacity: 1;
 }
@@ -2241,14 +2255,30 @@ html {
         transform: translateX(-50%) !important;
         z-index: 10 !important;
         margin: 0 !important;
-        gap: 6px !important;
+        gap: 4px !important;
+        max-width: 90vw !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+        padding: 4px 10px !important;
+        border-radius: 9999px !important;
+        background: rgba(10, 22, 40, 0.5) !important;
+        backdrop-filter: blur(6px) !important;
+        -webkit-backdrop-filter: blur(6px) !important;
+        touch-action: pan-x !important;
+    }
+    .dmk-carousel-indicators::-webkit-scrollbar {
+        display: none !important;
     }
     .dmk-carousel-indicators button {
-        width: 18px !important;
+        flex: 0 0 auto !important;
+        width: 10px !important;
         height: 3px !important;
+        margin: 0 1px !important;
     }
     .dmk-carousel-indicators button.active {
-        width: 32px !important;
+        width: 20px !important;
     }
 
     /* ====================================================

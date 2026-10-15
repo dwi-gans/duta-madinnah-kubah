@@ -53,8 +53,16 @@
                 $('.dmk-carousel-indicators button').removeClass('active').removeAttr('aria-current');
                 var $activeBtn = $('.dmk-carousel-indicators button[data-bs-slide-to="' + e.to + '"]');
                 $activeBtn.addClass('active').attr('aria-current', 'true');
-                if ($activeBtn.length && $activeBtn[0].scrollIntoView) {
-                    $activeBtn[0].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+
+                // Hanya scroll internal kontainer indikator secara horizontal, JANGAN scroll window/page
+                var indicatorContainer = document.querySelector('.dmk-carousel-indicators');
+                if (indicatorContainer && $activeBtn.length) {
+                    var btn = $activeBtn[0];
+                    var targetScrollLeft = btn.offsetLeft - (indicatorContainer.clientWidth / 2) + (btn.offsetWidth / 2);
+                    indicatorContainer.scrollTo({
+                        left: Math.max(0, targetScrollLeft),
+                        behavior: 'smooth'
+                    });
                 }
             });
 
